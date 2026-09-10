@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 462678d2fab0ff74abffbb0a8aee2b32
+guid: 34fa59d956484c24892a7310a432bdae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3431625617464036486
-    second: Troy_Stair_tilemap_0
+      213: 3460369147318020973
+    second: Troy_Stair_Tilemap_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,11 +113,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Troy_Stair_tilemap_0
+      name: Troy_Stair_Tilemap_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -128,14 +128,234 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a73fce4beaa6060d0800000000000000
-      internalID: -3431625617464036486
+      spriteID: d6bac99d763b50030800000000000000
+      internalID: 3460369147318020973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Stair_tilemap_1
+      name: Troy_Stair_Tilemap_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff033d1b90263d34dbdafec458e5b819
+      internalID: 1018109510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e01c7a5b5f649d49a94e2cb64521f3a
+      internalID: -444309888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19001dcf080450a498156b6af1c361a9
+      internalID: -851590673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374ae314ce5260041bfff3c674dc8095
+      internalID: -591434063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f715eeb824d2884b9b614645258055d
+      internalID: 2129282541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccdd03e647bf8b4b8f91e3c5753eb7f
+      internalID: 1078228364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3734e487d42eb6f4ba52c46368e31f17
+      internalID: -1576770909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033f3e53ea11dd2439194160d141e25d
+      internalID: 418732876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0720d9ea341774bba92f4bc0cfa0f5
+      internalID: 2025787340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be28cfb8f1406414d80987d99d0033d7
+      internalID: -271824576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_11
       rect:
         serializedVersion: 2
         x: 32
@@ -150,14 +370,80 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f51bac47ae5c544c80dd0ff25869f72
-      internalID: 1841455124
+      spriteID: 74fd27947de46e5488c4ab9d72833907
+      internalID: -764712989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Stair_tilemap_2
+      name: Troy_Stair_Tilemap_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97195d58760793a41a98790ed7e30907
+      internalID: 1823648194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d154e69ef7e48045a46955f8a27797a
+      internalID: -1706690440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c8efe2d6fe2c841ba46234f8c785bf
+      internalID: 516672105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_15
       rect:
         serializedVersion: 2
         x: 0
@@ -172,14 +458,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0986b82cf00cb1f4fbb2a6e8f92bfe87
-      internalID: -2010039197
+      spriteID: b945c98d631491f46a8b6e8ee91376b0
+      internalID: 995414217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Stair_tilemap_3
+      name: Troy_Stair_Tilemap_16
       rect:
         serializedVersion: 2
         x: 32
@@ -194,14 +480,80 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4d9782625b6ae84eb23acee624b19f2
-      internalID: 558190788
+      spriteID: 87804681e9e282348ade4a0dfc49cfbe
+      internalID: -1435436831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Stair_tilemap_4
+      name: Troy_Stair_Tilemap_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32c7e157f0650e46a9441b618f87777
+      internalID: -1492928783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28e6198cebb210468d5d782f817718b
+      internalID: 1661095659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921741b7a8015974a86fb59980b5f595
+      internalID: 1549608013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_20
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +568,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96892921deb2171408f7aa953313f4a3
-      internalID: -39733941
+      spriteID: b616d539124e44846887229a15ba3735
+      internalID: 1252089441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Stair_tilemap_5
+      name: Troy_Stair_Tilemap_21
       rect:
         serializedVersion: 2
         x: 32
@@ -238,8 +590,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7b8774ab480cb84bac0e5ed38eca7dc
-      internalID: 358351488
+      spriteID: 668b49d32f91e764c818653f2e1a51fd
+      internalID: -275170110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052f82fff6c43a14081b27717c13a7d6
+      internalID: -854389616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc68522faee8d64c841ba920ba2457b
+      internalID: 2046293917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troy_Stair_Tilemap_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945166ac779761d4ea6165ae74fd0fea
+      internalID: -381006301
       vertices: []
       indices: 
       edges: []
@@ -248,7 +666,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cdf0496c9f6e97d4da10d554d3fdd20e
+    spriteID: 26a07db0506e207458c4e9f87aedd16c
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +678,31 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Troy_Stair_tilemap_0: -3431625617464036486
-      Troy_Stair_tilemap_1: 1841455124
-      Troy_Stair_tilemap_2: -2010039197
-      Troy_Stair_tilemap_3: 558190788
-      Troy_Stair_tilemap_4: -39733941
-      Troy_Stair_tilemap_5: 358351488
+      Troy_Stair_Tilemap_0: 3460369147318020973
+      Troy_Stair_Tilemap_1: 1018109510
+      Troy_Stair_Tilemap_10: -271824576
+      Troy_Stair_Tilemap_11: -764712989
+      Troy_Stair_Tilemap_12: 1823648194
+      Troy_Stair_Tilemap_13: -1706690440
+      Troy_Stair_Tilemap_14: 516672105
+      Troy_Stair_Tilemap_15: 995414217
+      Troy_Stair_Tilemap_16: -1435436831
+      Troy_Stair_Tilemap_17: -1492928783
+      Troy_Stair_Tilemap_18: 1661095659
+      Troy_Stair_Tilemap_19: 1549608013
+      Troy_Stair_Tilemap_2: -444309888
+      Troy_Stair_Tilemap_20: 1252089441
+      Troy_Stair_Tilemap_21: -275170110
+      Troy_Stair_Tilemap_22: -854389616
+      Troy_Stair_Tilemap_23: 2046293917
+      Troy_Stair_Tilemap_24: -381006301
+      Troy_Stair_Tilemap_3: -851590673
+      Troy_Stair_Tilemap_4: -591434063
+      Troy_Stair_Tilemap_5: 2129282541
+      Troy_Stair_Tilemap_6: 1078228364
+      Troy_Stair_Tilemap_7: -1576770909
+      Troy_Stair_Tilemap_8: 418732876
+      Troy_Stair_Tilemap_9: 2025787340
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
