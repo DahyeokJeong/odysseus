@@ -1,31 +1,33 @@
 using UnityEngine;
 
-public class PlayerIdleState : IState
+public class PlayerAttackState : IState
 {
     private PlayerController controller;
 
-    public PlayerIdleState(PlayerController controller)
+    public PlayerAttackState(PlayerController controller)
     {
         this.controller = controller;
     }
 
     public void Enter()
     {
-        Debug.Log("Player - Enter Idle State");
+        Debug.Log("Player - Enter Attack State");
 
-        controller.Animator.Play("Player_Idle");
+        controller.Animator.Play("Player_Attack");
     }
 
     public void Tick()
     {
+        
     }
 
     public void FixedTick()
     {
+
     }
 
     public void Exit()
     {
-        Debug.Log("Player - Exit Idle State");
+        Debug.Log("Player - Exit Attack State");
     }
 }

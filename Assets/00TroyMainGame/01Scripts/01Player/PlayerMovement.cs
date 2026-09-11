@@ -2,17 +2,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Component")]
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private CapsuleCollider2D col;
+
+    [Header("Movement")]
     [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float stopDistance = 0.05f;
+
+    [Header("Collision")]
+    [SerializeField] private LayerMask wallLayer;
 
     private Vector2 targetPos;
 
     public bool IsMoving { get; private set; }
 
-    public void SetTarget(Vector2 target)
+    public bool TrySetTarget(Vector2 target)
     {
-        targetPos = target;
+        if (!TryGetNextPos(target, out _))
+            return false;
 
+        targetPos = target;
         IsMoving = true;
+
+        return true;
     }
 
     public void Move()
@@ -20,33 +33,59 @@ public class PlayerMovement : MonoBehaviour
         if (!IsMoving)
             return;
 
-        Vector2 currentPos = transform.position;
+        if (!TryGetNextPos(targetPos, out Vector2 nextPos))
+        {
+            IsMoving = false;
+            return;
+        }
 
-        Vector2 toTarget = targetPos - currentPos;
+        rb.MovePosition(nextPos);
+    }
+
+    private bool TryGetNextPos(Vector2 target, out Vector2 nextPos)
+    {
+        Vector2 currentPos = rb.position;
+
+        Vector2 toTarget = target - currentPos;
 
         float distance = toTarget.magnitude;
 
-        float moveDistance = moveSpeed * Time.deltaTime;
-
-        if (distance <= moveDistance)
+        if (distance <= stopDistance)
         {
-            transform.position = new Vector3(
-                                        targetPos.x,
-                                        targetPos.y,
-                                        transform.position.z);
-
-            IsMoving = false;
-
-            return;
+            nextPos = currentPos;
+            return false;
         }
 
         Vector2 moveDirection = toTarget.normalized;
 
-        Vector2 nextPos = currentPos + moveDirection * moveDistance;
+        float moveDistance = moveSpeed * Time.fixedDeltaTime;
 
-        transform.position = new Vector3(
-                                    nextPos.x,
-                                    nextPos.y,
-                                    transform.position.z);
+        float actualMoveDistance = Mathf.Min(moveDistance, distance);
+
+        nextPos = currentPos + moveDirection * actualMoveDistance;
+
+        if (CheckWall(nextPos))
+            return false;
+
+        return true;
+    }
+
+    private bool CheckWall(Vector2 nextPos)
+    {
+        Vector2 checkPos = nextPos + col.offset;
+        
+        Collider2D hit = Physics2D.OverlapCapsule(
+            checkPos,
+            col.size,
+            col.direction,
+            0f,
+            wallLayer);
+
+        if (hit != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

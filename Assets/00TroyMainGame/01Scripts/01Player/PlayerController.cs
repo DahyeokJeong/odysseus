@@ -2,45 +2,76 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Component")]
+    [SerializeField] private PlayerInputHandler inputHandler;
+    [SerializeField] private PlayerMovement movement;
+    [SerializeField] private PlayerAttack attack;
+    [SerializeField] public Animator animator;
+
+    public PlayerInputHandler InputHandler => inputHandler;
+    public PlayerMovement Movement => movement;
+    public PlayerAttack Attack => attack;
+    public Animator Animator => animator;
+
+    private Camera mainCam;
+
     private IState currentState;
 
-    private PlayerInputHandler inputHandler;
-    private PlayerMovement movement;
-
-    public PlayerIdleState IdleState { get; private set; }
-    public PlayerMoveState MoveState { get; private set; }
+    private PlayerIdleState idleState;
+    private PlayerMoveState moveState;
+    private PlayerAttackState attackState;
 
     private void Awake()
     {
-        inputHandler = GetComponent<PlayerInputHandler>();
-        movement = GetComponent<PlayerMovement>();
-
-        IdleState = new PlayerIdleState(
-            this,
-            inputHandler,
-            movement
-        );
-
-        MoveState = new PlayerMoveState(
-            this,
-            inputHandler,
-            movement
-        );
+        mainCam = Camera.main;
+        
+        idleState = new PlayerIdleState(this);
+        moveState = new PlayerMoveState(this);
+        attackState = new PlayerAttackState(this);
     }
 
     private void Start()
     {
-        ChangeState(IdleState);
+        ChangeState(idleState);
     }
 
     private void Update()
     {
+        HandleStateChange();
+
         currentState?.Tick();
     }
 
     private void FixedUpdate()
     {
         currentState?.FixedTick();
+    }
+
+    private void HandleStateChange()
+    {
+        if (inputHandler.MovePressed)
+        {
+            Vector3 mouseWorldPos = mainCam.ScreenToWorldPoint(inputHandler.MousePos);
+
+            mouseWorldPos.z = 0f;
+
+            if (movement.TrySetTarget(mouseWorldPos))
+                ChangeState(moveState);
+
+            return;
+        }
+
+        if (inputHandler.AttackPressed)
+        {
+            ChangeState(attackState);
+            return;
+        }
+
+        if (currentState == moveState && !movement.IsMoving)
+        {
+            ChangeState(idleState);
+            return;
+        }
     }
 
     public void ChangeState(IState newState)
