@@ -22,7 +22,7 @@ public class PlayerMoveState : IState
 
     public void FixedTick()
     {
-        controller.Movement.Move();
+        controller.Movement.Move(controller.InputHandler.MoveInput);
     }
 
     public void Exit()

@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     public PlayerAttack Attack => attack;
     public Animator Animator => animator;
 
-    private Camera mainCam;
-
     private IState currentState;
 
     private PlayerIdleState idleState;
@@ -22,9 +20,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAttackState attackState;
 
     private void Awake()
-    {
-        mainCam = Camera.main;
-        
+    {        
         idleState = new PlayerIdleState(this);
         moveState = new PlayerMoveState(this);
         attackState = new PlayerAttackState(this);
@@ -49,15 +45,12 @@ public class PlayerController : MonoBehaviour
 
     private void HandleStateChange()
     {
-        if (inputHandler.MovePressed)
+        if (currentState == attackState)
         {
-            Vector3 mouseWorldPos = mainCam.ScreenToWorldPoint(inputHandler.MousePos);
+            if (!attack.IsAttackFinished)
+                return;
 
-            mouseWorldPos.z = 0f;
-
-            if (movement.TrySetTarget(mouseWorldPos))
-                ChangeState(moveState);
-
+            ChangeState(idleState);
             return;
         }
 
@@ -67,7 +60,15 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (currentState == moveState && !movement.IsMoving)
+        if (inputHandler.MoveInput.sqrMagnitude > 0f)
+        {
+            if (currentState != moveState)
+                ChangeState(moveState);
+
+            return;
+        }
+
+        if (currentState == moveState)
         {
             ChangeState(idleState);
             return;

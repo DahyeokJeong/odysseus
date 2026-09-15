@@ -13,6 +13,8 @@ public class PlayerAttackState : IState
     {
         Debug.Log("Player - Enter Attack State");
 
+        controller.Attack.StartAttack();
+
         controller.Animator.Play("Player_Attack");
     }
 
