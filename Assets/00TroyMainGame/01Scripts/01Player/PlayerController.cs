@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Animator Animator => animator;
 
     private IState currentState;
+    private IState prevState;
 
     private PlayerIdleState idleState;
     private PlayerMoveState moveState;
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         currentState?.Exit();
 
+        prevState = currentState;
         currentState = newState;
 
         currentState?.Enter();
