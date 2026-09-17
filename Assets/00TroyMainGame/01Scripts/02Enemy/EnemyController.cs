@@ -59,4 +59,16 @@ public class EnemyController : MonoBehaviour
 
         currentState?.Enter();
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        CapsuleCollider2D col = GetComponent<CapsuleCollider2D>();
+
+        if (col == null)
+            return;
+
+        Gizmos.color = Color.green;
+
+        Gizmos.DrawWireCube(col.bounds.center, col.bounds.size);
+    }
 }

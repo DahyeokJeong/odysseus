@@ -11,8 +11,6 @@ public class PlayerIdleState : IState
 
     public void Enter()
     {
-        Debug.Log("Player - Enter Idle State");
-
         controller.Animator.Play("Player_Idle");
     }
 
@@ -26,6 +24,5 @@ public class PlayerIdleState : IState
 
     public void Exit()
     {
-        Debug.Log("Player - Exit Idle State");
     }
 }

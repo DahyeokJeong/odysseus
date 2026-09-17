@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Component")]
     [SerializeField] private PlayerInputHandler inputHandler;
+    [SerializeField] private PlayerView view;
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private PlayerAttack attack;
     [SerializeField] public Animator animator;
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        view.UpdateFacing(inputHandler.MoveInput);
+
         HandleStateChange();
 
         currentState?.Tick();

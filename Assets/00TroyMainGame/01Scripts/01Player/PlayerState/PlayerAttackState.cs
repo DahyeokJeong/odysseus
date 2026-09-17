@@ -11,8 +11,6 @@ public class PlayerAttackState : IState
 
     public void Enter()
     {
-        Debug.Log("Player - Enter Attack State");
-
         controller.Attack.StartAttack();
 
         controller.Animator.Play("Player_Attack");
@@ -30,6 +28,5 @@ public class PlayerAttackState : IState
 
     public void Exit()
     {
-        Debug.Log("Player - Exit Attack State");
     }
 }

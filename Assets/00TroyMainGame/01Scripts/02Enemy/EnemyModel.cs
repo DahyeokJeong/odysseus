@@ -18,5 +18,7 @@ public class EnemyModel : MonoBehaviour, IDamageable
 
         if (CurrentHP < 0f)
             CurrentHP = 0f;
+
+        Debug.Log($"{gameObject.name} HP : {CurrentHP}");
     }
 }

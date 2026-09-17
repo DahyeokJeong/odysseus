@@ -11,8 +11,6 @@ public class PlayerMoveState : IState
 
     public void Enter()
     {
-        Debug.Log("Player - Enter Move State");
-
         controller.Animator.Play("Player_Move");
     }
 
@@ -27,6 +25,5 @@ public class PlayerMoveState : IState
 
     public void Exit()
     {
-        Debug.Log("Player - Exit Move State");
     }
 }
