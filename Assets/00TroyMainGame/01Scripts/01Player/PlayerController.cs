@@ -35,9 +35,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        view.UpdateFacing(inputHandler.MoveInput);
-
         HandleStateChange();
+
+        if (currentState != attackState)
+            view.UpdateFacing(inputHandler.MoveInput);
 
         currentState?.Tick();
     }
