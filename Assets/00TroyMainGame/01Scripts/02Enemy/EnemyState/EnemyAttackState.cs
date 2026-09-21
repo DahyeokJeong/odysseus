@@ -13,15 +13,16 @@ public class EnemyAttackState : IState
     {
     }
 
-    public void Exit()
+    public void Tick()
     {
+        controller.Attack.TryAttack();
     }
 
     public void FixedTick()
     {
     }
 
-    public void Tick()
+    public void Exit()
     {
     }
 }

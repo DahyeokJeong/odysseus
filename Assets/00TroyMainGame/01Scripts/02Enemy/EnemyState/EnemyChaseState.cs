@@ -19,6 +19,7 @@ public class EnemyChaseState : IState
 
     public void FixedTick()
     {
+        controller.Movement.Move(controller.Player.position);
     }
 
     public void Tick()

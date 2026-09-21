@@ -19,6 +19,7 @@ public class EnemyReturnState : IState
 
     public void FixedTick()
     {
+        controller.Movement.Move(controller.SpawnPos);
     }
 
     public void Tick()

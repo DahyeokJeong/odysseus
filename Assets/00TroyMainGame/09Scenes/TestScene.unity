@@ -133,6 +133,9 @@ GameObject:
   - component: {fileID: 9521712}
   - component: {fileID: 9521711}
   - component: {fileID: 9521716}
+  - component: {fileID: 9521717}
+  - component: {fileID: 9521718}
+  - component: {fileID: 9521719}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -176,6 +179,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   model: {fileID: 9521713}
   animator: {fileID: 9521711}
+  movement: {fileID: 9521717}
+  attack: {fileID: 9521719}
+  detectRange: 5
+  chaseRange: 8
+  attackRange: 1.5
+  player: {fileID: 1599407326}
 --- !u!114 &9521713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +310,60 @@ CapsuleCollider2D:
   m_Offset: {x: 0.2, y: 2}
   m_Size: {x: 2, y: 3.3}
   m_Direction: 0
+--- !u!114 &9521717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9521710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fab64ea3b473f4d91d7d1591eea2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  rb: {fileID: 9521718}
+  moveSpeed: 3
+--- !u!50 &9521718
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9521710}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &9521719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9521710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807e1808e88d0c449b5d150192dbd153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  attackCooldown: 3
 --- !u!1 &17189409
 GameObject:
   m_ObjectHideFlags: 0
@@ -12653,7 +12716,7 @@ GameObject:
   - component: {fileID: 1599407334}
   - component: {fileID: 1599407335}
   - component: {fileID: 1599407331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12835,7 +12898,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  detectionRadius: 0.15
 --- !u!50 &1599407334
 Rigidbody2D:
   serializedVersion: 5
@@ -27911,7 +27973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094056519}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

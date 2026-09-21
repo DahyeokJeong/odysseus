@@ -19,7 +19,7 @@ public class PlayerAttackState : IState
 
         controller.Attack.StartAttack();
 
-        controller.Animator.Play("Player_Attack");
+        PlayAttackAnimation(attackDirection);
     }
 
     public void Tick()
@@ -43,9 +43,9 @@ public class PlayerAttackState : IState
         if (Mathf.Abs(attackDirection.y) > Mathf.Abs(attackDirection.x))
         {
             if (attackDirection.y < 0f)
-                animName = "Player_Anims_Forward";
+                animName = "Player_Attack_Forward";
             else
-                animName = "Player_Anims_Up";
+                animName = "Player_Attack_Up";
         }
 
         controller.Animator.Play(animName, 0, 0f);
