@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float detectionRadius = 0.15f;
 
     public bool IsAttackFinished { get; private set; }
+    public Vector2 AttackDirection { get; private set; }
 
     public void StartAttack()
     {
@@ -40,6 +41,16 @@ public class PlayerAttack : MonoBehaviour
         {
            
         }    
+    }
+
+    public void SetAttackDirection(Vector2 mouseWorldPos)
+    {
+        Vector2 direction = mouseWorldPos - (Vector2)transform.position;
+
+        if (direction.sqrMagnitude > 0.0001f)
+            AttackDirection = direction.normalized;
+
+        Debug.Log($"Attack Direction : {AttackDirection}");
     }
 
     private void OnDrawGizmosSelected()

@@ -15,6 +15,15 @@ public class PlayerView : MonoBehaviour
 
     public void UpdateFacing(Vector2 moveInput)
     {
+        if (moveInput.sqrMagnitude < 0.001f)
+            return;
+
+        if (Mathf.Abs(moveInput.y) > Mathf.Abs(moveInput.x))
+        {
+            spriteRenderer.flipX = false;
+            return;
+        }
+
         if (moveInput.x < 0f)
         {
             spriteRenderer.flipX = true;

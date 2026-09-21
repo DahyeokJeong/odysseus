@@ -6,6 +6,7 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerInputActions inputActions;
 
     public Vector2 MoveInput { get; private set; }
+    public Vector2 MouseWorldPos { get; private set; }
     public bool AttackPressed { get; private set; }
 
     private void Awake()
@@ -43,8 +44,35 @@ public class PlayerInputHandler : MonoBehaviour
         AttackPressed = true;
     }
 
+    private void Update()
+    {
+        UpdateMousePos();
+    }
+
     private void LateUpdate()
     {
         AttackPressed = false;
+    }
+
+    private void UpdateMousePos()
+    {
+        if (Mouse.current == null)
+            return;
+
+        Camera mainCam = Camera.main;
+
+        if (mainCam == null)
+            return;
+
+        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
+
+        Vector3 mouseWorldPos = mainCam.ScreenToWorldPoint(new Vector3(
+                                                                mouseScreenPos.x,
+                                                                mouseScreenPos.y,
+                                                                -mainCam.transform.position.z));
+
+        MouseWorldPos = mouseWorldPos;
+
+        //Debug.Log($"Mouse World Pos : {MouseWorldPos}");
     }
 }

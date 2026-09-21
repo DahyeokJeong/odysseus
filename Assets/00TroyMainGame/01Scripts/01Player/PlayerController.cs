@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Animator animator;
 
     public PlayerInputHandler InputHandler => inputHandler;
+    public PlayerView View => view;
     public PlayerMovement Movement => movement;
     public PlayerAttack Attack => attack;
     public Animator Animator => animator;
