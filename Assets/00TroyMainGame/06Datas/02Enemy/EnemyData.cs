@@ -4,19 +4,33 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     [Header("Info")]
-    public int EnemyID;
-    public string EnemyName;
+    [SerializeField] private int enemyID;
+    [SerializeField] private string enemyName;
 
     [Header("Stat")]
-    public float MaxHP;
-    public float Attack;
-    public float Defense;
-    public float MoveSpeed;
+    [SerializeField] private float maxHP = 100f;
+    [SerializeField] private float attack = 10f;
+    [SerializeField] private float defence = 0f;
+    [SerializeField] private float moveSpeed = 3f;
 
     [Header("Range")]
-    public float DetectRange;
-    public float AttackRange;
+    [SerializeField] private float detectRange = 5f;
+    [SerializeField] private float chaseRange = 8f;
+    [SerializeField] private float attackRange = 1.5f;
 
     [Header("Attack")]
-    public float AttackSpeed;
+    [SerializeField] private float attackCooldown = 1.5f;
+
+    public int EnemyID => enemyID;
+    public string EnemyName => enemyName;
+
+    public float MaxHP => maxHP;
+    public float Attack => attack;
+    public float Defence => defence;
+    public float MoveSpeed => moveSpeed;
+
+    public float DetectRange => detectRange;
+    public float ChaseRange => chaseRange;
+    public float AttackRange => attackRange;
+    public float AttackCooldown => attackCooldown;
 }

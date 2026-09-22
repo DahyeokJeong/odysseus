@@ -4,14 +4,10 @@ public class EnemyController : MonoBehaviour
 {
     [Header("Component")]
     [SerializeField] private EnemyModel model;
-    [SerializeField] private Animator animator;
     [SerializeField] private EnemyMovement movement;
     [SerializeField] private EnemyAttack attack;
-
-    [Header("Detection")]
-    [SerializeField] private float detectRange = 5f;
-    [SerializeField] private float chaseRange = 8f;
-    [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private EnemyHit hit;
+    [SerializeField] private Animator animator;
 
     [Header("Target")]
     [SerializeField] private Transform player;
@@ -19,13 +15,16 @@ public class EnemyController : MonoBehaviour
     public Vector2 SpawnPos {  get; private set; }
 
     public EnemyModel Model => model;
-    public Animator Animator => animator; // 읽기 전용 프로퍼티
-    public Transform Player => player;
-    public float DetectRange => detectRange;
-    public float ChaseRange => chaseRange;
-    public float AttackRange => attackRange;
     public EnemyMovement Movement => movement;
     public EnemyAttack Attack => attack;
+    public EnemyHit Hit => hit;
+    public Animator Animator => animator;
+
+    public Transform Player => player;
+
+    public float DetectRange => model.DetectRange;
+    public float ChaseRange => model.ChaseRange;
+    public float AttackRange => model.AttackRange;
 
     private IState currentState;
     private IState prevState;
@@ -37,6 +36,7 @@ public class EnemyController : MonoBehaviour
     private EnemyDeadState deadState;
     private EnemyReturnState returnState;
 
+
     private void Awake()
     {
         idleState = new EnemyIdleState(this);
@@ -47,6 +47,8 @@ public class EnemyController : MonoBehaviour
         returnState = new EnemyReturnState(this);
 
         SpawnPos = transform.position;
+
+        hit.OnHit += HandleHit;
     }
 
     private void Start()
@@ -57,6 +59,7 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         HandleStateChange();
+
         currentState?.Tick();
     }
 
@@ -67,43 +70,69 @@ public class EnemyController : MonoBehaviour
 
     private void HandleStateChange()
     {
+        // 사망 상태
+        if (currentState == deadState)
+            return;
+
+        if (model.CurrentHP <= 0f)
+        {
+            ChangeState(deadState);
+            return;
+        }
+
+        // 피격 상태
+        if (currentState == hitState)
+        {
+            if (!hit.IsHitFinished)
+                return;
+
+            ChangeState(idleState);
+            return;
+        }
+
         if (player == null)
             return;
 
-        float distance = Vector2.Distance(transform.position, player.position);
+        float distance = Vector2.Distance(
+            transform.position,
+            player.position
+        );
 
-        float spawnDistance = Vector2.Distance(SpawnPos, player.position);
-        
+        float spawnDistance = Vector2.Distance(
+            SpawnPos,
+            player.position
+        );
+
         if (currentState == idleState)
         {
-            if (distance <= detectRange)
+            if (distance <= DetectRange)
                 ChangeState(chaseState);
         }
 
         else if (currentState == chaseState)
         {
-            if (spawnDistance > chaseRange)
+            if (spawnDistance > ChaseRange)
             {
                 ChangeState(returnState);
             }
-            else if (distance <= attackRange)
+            else if (distance <= AttackRange)
             {
                 ChangeState(attackState);
             }
         }
-        
+
         else if (currentState == attackState)
         {
-            if (spawnDistance > chaseRange)
+            if (spawnDistance > ChaseRange)
             {
                 ChangeState(returnState);
             }
-            else if (distance > attackRange)
+            else if (distance > AttackRange)
             {
                 ChangeState(chaseState);
             }
         }
-        
+
         else if (currentState == returnState)
         {
             float returnDistance = Vector2.Distance(
@@ -118,12 +147,34 @@ public class EnemyController : MonoBehaviour
 
     public void ChangeState(IState newState)
     {
+        if (currentState == newState)
+            return;
+
+        //Debug.Log($"{name} : {currentState?.GetType().Name} → {newState.GetType().Name}");
+
         currentState?.Exit();
 
         prevState = currentState;
         currentState = newState;
 
         currentState?.Enter();
+    }
+
+    private void HandleHit()
+    {
+        if (model.CurrentHP <= 0f)
+        {
+            ChangeState(deadState);
+            return;
+        }
+
+        ChangeState(hitState);
+    }
+
+    private void OnDestroy()
+    {
+        if (hit != null)
+            hit.OnHit -= HandleHit;
     }
 
     private void OnDrawGizmosSelected()

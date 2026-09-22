@@ -4,13 +4,11 @@ public class EnemyMovement : MonoBehaviour
 {
     [Header("Component")]
     [SerializeField] private Rigidbody2D rb;
-
-    [Header("Movement")]
-    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private EnemyModel model;
 
     public void Move(Vector2 targetPos)
     {
-        Vector2 nextPos = Vector2.MoveTowards(rb.position, targetPos, moveSpeed*Time.fixedDeltaTime);
+        Vector2 nextPos = Vector2.MoveTowards(rb.position, targetPos, model.MoveSpeed*Time.fixedDeltaTime);
 
         rb.MovePosition(nextPos);
     }

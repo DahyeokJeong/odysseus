@@ -5,9 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Component")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private CapsuleCollider2D col;
-
-    [Header("Movement")]
-    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private PlayerModel playerModel;
 
     [Header("Collision")]
     [SerializeField] private LayerMask wallLayer;
@@ -18,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 moveDirection = moveInput.normalized;
 
-        float moveDistance = moveSpeed * Time.fixedDeltaTime;
+        float moveDistance = playerModel.MoveSpeed * Time.fixedDeltaTime;
 
         Vector2 nextPos = currentPos + moveDirection * moveDistance;
 

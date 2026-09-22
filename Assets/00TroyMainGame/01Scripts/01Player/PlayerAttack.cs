@@ -4,19 +4,24 @@ public class PlayerAttack : MonoBehaviour
 {
     [Header("Component")]
     [SerializeField] private Transform attackPoint;
+    [SerializeField] private PlayerModel playerModel;
 
-    [Header("Attack")] // 추후 Stat과 연결
-    [SerializeField] private float attackRange = 2f;
+    [Header("Attack")]
     [SerializeField] private float attackAngle = 90f;
     [SerializeField] private LayerMask enemyLayer;
+
+    private float nextAttackTime;
 
     public bool IsAttackFinished { get; private set; }
     public Vector2 AttackDirection { get; private set; }
     public Vector2 FacingDirection { get; private set; } = Vector2.right;
+    public bool CanAttack => Time.time >= nextAttackTime;
 
     public void StartAttack()
     {
         IsAttackFinished = false;
+
+        nextAttackTime = Time.time + playerModel.AttackCooldown;
     }
 
     public void EndAttack()
@@ -29,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
         Vector2 attackOrigin = transform.position;
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position,
-                                                       attackRange,
+                                                       playerModel.AttackRange,
                                                        enemyLayer);
 
         foreach (Collider2D hit in hits)
@@ -52,10 +57,10 @@ public class PlayerAttack : MonoBehaviour
 
             if (target == null)
                 continue;
+            
+            Vector2 hitDirection = ((Vector2)hit.transform.position - attackOrigin).normalized;
 
-            target.TakeDamage(10f);
-
-            Debug.Log($"공격 성공 : {hit.name}");
+            target.TakeDamage(playerModel.Attack, hitDirection);
         }
     }
 
@@ -91,7 +96,10 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-         Gizmos.color = Color.red;
+        if (playerModel == null)
+            return;
+
+        Gizmos.color = Color.red;
 
         Vector3 attackDirection = FacingDirection;
         Vector3 prevPos = Vector3.zero;
@@ -99,7 +107,8 @@ public class PlayerAttack : MonoBehaviour
         int segments = 30;
 
         for (int i = 0; i <= segments; i++)
-        {
+        { 
+
             float angle = -attackAngle * 0.5f
                         + attackAngle * i / segments;
 
@@ -107,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
                 Quaternion.Euler(0f, 0f, angle) * attackDirection;
 
             Vector3 nextPos =
-                transform.position + direction * attackRange;
+                transform.position + direction * playerModel.AttackRange;
 
             if (i == 0)
             {

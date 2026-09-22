@@ -1,8 +1,10 @@
-public class EnemyHitState : IState
-{
-    private EnemyController controller;
+using UnityEngine;
 
-    public EnemyHitState(EnemyController controller)
+public class PlayerHitState : IState
+{
+    private PlayerController controller;
+
+    public PlayerHitState(PlayerController controller)
     {
         this.controller = controller;
     }
