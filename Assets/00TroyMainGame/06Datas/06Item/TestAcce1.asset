@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5980c72f172a1f740b7b8db937697b22, type: 3}
-  m_Name: TestItem3
+  m_Name: TestAcce1
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemID: 3333
-  itemName: TestItem3
-  itemIcon: {fileID: 21300000, guid: 1ff18920df7230a4dbc8e9e75c4ed7e5, type: 3}
+  itemID: 6102
+  itemName: Acce2
+  itemIcon: {fileID: 21300000, guid: 62ce59ce09148c847b198159a3abc9f6, type: 3}
+  maxHP: 0
+  attack: 0
+  defence: 0
+  moveSpeed: 0
+  attackRange: 0
+  attackCooldown: 0

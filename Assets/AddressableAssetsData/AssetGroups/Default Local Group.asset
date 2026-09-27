@@ -15,26 +15,56 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: e204fbaddd50b1f4bb1ede61b6255899
   m_SerializeEntries:
-  - m_GUID: 062dbbeb24fda134e90938bf94cb3b57
-    m_Address: TestItem3
+  - m_GUID: 03ce1b782c4199441a4a2aed458de6a2
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestPotion.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Item
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0f0f83b1e4c298e46a029c0f61542c25
-    m_Address: TestItem
+  - m_GUID: 0d821185aef2f054a8e138f5faf5dd7a
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestAcce2.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Item
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 52248e7810c4ece4db04b87ce905a977
-    m_Address: TestItem4
+  - m_GUID: 20c2068be10715a4dbd8f8763a1964be
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestCloak.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Item
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ae3263b08046ea24aaee7471e3073414
-    m_Address: TestItem2
+  - m_GUID: 50a071887b9ea63418be838870f2a961
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestSword.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a7c0dc57f6c5e54a8760b0310ba3826
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestEtc.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8eadf40d6fc76e42ae2fd6e9e2a6874
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestShoes.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: effb9a8c7fa79634b9838493d28ae64e
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestAcce1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f45853d4727641d43911ca48f71cf77c
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestHelmet.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa51739680ba49b428036b8967c4cc4b
+    m_Address: Assets/00TroyMainGame/06Datas/06Item/TestArmor.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Item
