@@ -15,6 +15,14 @@ public class ItemSlotUI : MonoBehaviour
         this.item = item;
 
         itemUI = Instantiate(itemPrefab, transform);
+
+        RectTransform itemRect = itemUI.GetComponent<RectTransform>();
+
+        itemRect.anchorMin = Vector2.zero;
+        itemRect.anchorMax = Vector2.one;
+        itemRect.offsetMin = Vector2.zero;
+        itemRect.offsetMax = Vector2.zero;
+
         itemUI.SetItem(item);
     }
 }

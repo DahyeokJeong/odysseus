@@ -31,6 +31,15 @@ public class InventoryUI : MonoBehaviour
 
     private void RemoveItem(InventoryItem item)
     {
+        ItemSlotUI[] slots = content.GetComponentsInChildren<ItemSlotUI>();
 
+        foreach (ItemSlotUI slot in slots)
+        {
+            if (slot.Item == item)
+            {
+                Destroy(slot.gameObject);
+                return;
+            }
+        }
     }
 }

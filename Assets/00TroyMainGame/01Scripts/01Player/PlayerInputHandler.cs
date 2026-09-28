@@ -21,6 +21,8 @@ public class PlayerInputHandler : MonoBehaviour
 
         inputActions.Player.Attack.performed += OnAttack;
 
+        inputActions.Player.Inven.performed += OnInven;
+
         inputActions.Player.Enable();
     }
 
@@ -30,6 +32,8 @@ public class PlayerInputHandler : MonoBehaviour
         inputActions.Player.Move.canceled -= OnMove;
 
         inputActions.Player.Attack.performed -= OnAttack;
+
+        inputActions.Player.Inven.performed -= OnInven;
 
         inputActions.Player.Disable();
     }
@@ -42,6 +46,11 @@ public class PlayerInputHandler : MonoBehaviour
     private void OnAttack(InputAction.CallbackContext context)
     {
         AttackPressed = true;
+    }
+
+    private void OnInven(InputAction.CallbackContext context)
+    {
+        EventBus.ToggleInventory();
     }
 
     private void Update()

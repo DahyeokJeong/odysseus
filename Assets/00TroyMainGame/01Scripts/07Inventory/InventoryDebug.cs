@@ -31,8 +31,13 @@ public class InventoryDebug : MonoBehaviour
             itemData =>
             {
                 itemDatas.Add(itemData);
+
+                //Debug.Log($"ItemData Load : {itemData.ItemName}");
             }
-        );
+        ).Completed += handle =>
+        {
+            Debug.Log($"로드된 ItemData 개수 : {itemDatas.Count}");
+        };
     }
 
     private void AddRandomItem()
