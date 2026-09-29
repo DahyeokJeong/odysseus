@@ -8,6 +8,7 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 MoveInput { get; private set; }
     public Vector2 MouseWorldPos { get; private set; }
     public bool AttackPressed { get; private set; }
+    public bool InteractPressed {  get; private set; }
 
     private void Awake()
     {
@@ -23,6 +24,8 @@ public class PlayerInputHandler : MonoBehaviour
 
         inputActions.Player.Inven.performed += OnInven;
 
+        inputActions.Player.Interact.performed += OnInteract;
+
         inputActions.Player.Enable();
     }
 
@@ -34,6 +37,8 @@ public class PlayerInputHandler : MonoBehaviour
         inputActions.Player.Attack.performed -= OnAttack;
 
         inputActions.Player.Inven.performed -= OnInven;
+
+        inputActions.Player.Interact.performed -= OnInteract;
 
         inputActions.Player.Disable();
     }
@@ -53,6 +58,11 @@ public class PlayerInputHandler : MonoBehaviour
         EventBus.ToggleInventory();
     }
 
+    private void OnInteract(InputAction.CallbackContext context)
+    {
+        InteractPressed = true;
+    }
+
     private void Update()
     {
         UpdateMousePos();
@@ -61,6 +71,7 @@ public class PlayerInputHandler : MonoBehaviour
     private void LateUpdate()
     {
         AttackPressed = false;
+        InteractPressed = false;
     }
 
     private void UpdateMousePos()
@@ -81,7 +92,5 @@ public class PlayerInputHandler : MonoBehaviour
                                                                 -mainCam.transform.position.z));
 
         MouseWorldPos = mouseWorldPos;
-
-        //Debug.Log($"Mouse World Pos : {MouseWorldPos}");
     }
 }

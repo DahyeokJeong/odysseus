@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(nextPos);
     }
 
+    public void Teleport(Vector2 position)
+    {
+        rb.position = position;
+    }
+
     private bool CheckWall(Vector2 nextPos)
     {
         Vector2 checkPos = nextPos + col.offset;
@@ -37,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             0f,
             wallLayer);
 
-        if (hit != null)
+        if (hit != null && !hit.isTrigger)
             return true;
 
         return false;
