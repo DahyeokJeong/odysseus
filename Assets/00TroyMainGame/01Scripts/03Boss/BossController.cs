@@ -5,6 +5,7 @@ public class BossController : MonoBehaviour
     [Header("Component")]
     [SerializeField] private BossModel model;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private BossNormalAttack normalAttack;
 
     [Header("Target")]
     [SerializeField] private Transform target;
@@ -19,6 +20,7 @@ public class BossController : MonoBehaviour
     public BossModel Model => model;
     public Rigidbody2D Rb => rb;
     public Transform Target => target;
+    public BossNormalAttack NormalAttack => normalAttack;
 
     public BossIdleState IdleState => idleState;
     public BossChaseState ChaseState => chaseState;

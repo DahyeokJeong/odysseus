@@ -29,7 +29,8 @@ public class BossNormalAttackState : IState
 
         if (!isAttack && attackTimer >= telegraphDuration)
         {
-            Attack();
+            controller.NormalAttack.Attack();
+
             HideTelegraph();
 
             isAttack = true;
@@ -57,11 +58,6 @@ public class BossNormalAttackState : IState
     }
 
     private void HideTelegraph()
-    {
-
-    }
-
-    private void Attack()
     {
 
     }

@@ -10151,6 +10151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHit
   bossModel: {fileID: 801287330}
+  spriteRenderer: {fileID: 801287333}
+  flashDuration: 0.1
 --- !u!70 &319282972
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -28909,6 +28911,7 @@ GameObject:
   - component: {fileID: 801287330}
   - component: {fileID: 801287332}
   - component: {fileID: 801287331}
+  - component: {fileID: 801287336}
   - component: {fileID: 801287334}
   m_Layer: 11
   m_Name: Minotaur
@@ -28931,6 +28934,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 319282970}
+  - {fileID: 2073002691}
   m_Father: {fileID: 1115159877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &801287330
@@ -29080,12 +29084,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 801287328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa9ecc6ba403dc4faeb350255386e28, type: 3}
+  m_Script: {fileID: 11500000, guid: d3a99ce9c75babe4c8ffd01ffe4c10af, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossController
+  m_EditorClassIdentifier: Assembly-CSharp::MinoController
   model: {fileID: 801287330}
   rb: {fileID: 801287331}
+  normalAttack: {fileID: 801287336}
   target: {fileID: 1599407326}
+--- !u!114 &801287336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801287328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429601a32887ac949bf8ef95ed299d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossNormalAttack
+  bossModel: {fileID: 801287330}
+  attackPoint: {fileID: 2073002691}
+  attackSize: {x: 5, y: 4}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &828000054
 GameObject:
   m_ObjectHideFlags: 0
@@ -66692,6 +66715,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2073002690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2073002691}
+  m_Layer: 11
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2073002691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073002690}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4, y: 2.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 801287329}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093483366
 GameObject:
   m_ObjectHideFlags: 0
