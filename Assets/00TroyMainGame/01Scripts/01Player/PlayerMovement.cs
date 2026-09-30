@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerModel playerModel;
 
     [Header("Collision")]
-    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private LayerMask collisionLayer;
 
     public void Move(Vector2 moveInput)
     {
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 nextPos = currentPos + moveDirection * moveDistance;
 
-        if (CheckWall(nextPos))
+        if (CheckWall(moveDirection, moveDistance))
             return;
 
         rb.MovePosition(nextPos);
@@ -31,20 +32,28 @@ public class PlayerMovement : MonoBehaviour
         rb.position = position;
     }
 
-    private bool CheckWall(Vector2 nextPos)
+    private bool CheckWall(Vector2 moveDirection, float moveDistance)
     {
-        Vector2 checkPos = nextPos + col.offset;
-        
-        Collider2D hit = Physics2D.OverlapCapsule(
+        Vector2 checkPos = rb.position + col.offset;
+
+        RaycastHit2D hit = Physics2D.CapsuleCast(
             checkPos,
             col.size,
             col.direction,
             0f,
-            wallLayer);
+            moveDirection,
+            moveDistance,
+            collisionLayer
+        );
 
-        if (hit != null && !hit.isTrigger)
-            return true;
+        if (hit.collider == null || hit.collider.isTrigger)
+            return false;
 
-        return false;
+        Vector2 hitDirection = ((Vector2)hit.collider.bounds.center - rb.position).normalized;
+
+        if (Vector2.Dot(moveDirection, hitDirection) < 0f)
+            return false;
+
+        return true;
     }
 }
