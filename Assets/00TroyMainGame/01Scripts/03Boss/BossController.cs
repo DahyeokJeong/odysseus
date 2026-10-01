@@ -10,6 +10,12 @@ public class BossController : MonoBehaviour
     [Header("Target")]
     [SerializeField] private Transform target;
 
+    [Header("Attack")]
+    [SerializeField] private float attackCooldown = 2.5f;
+
+    private float attackCooldownTimer;
+    public bool CanAttack => attackCooldownTimer <= 0f;
+
     protected IState currentState;
 
     protected BossIdleState idleState;
@@ -42,6 +48,9 @@ public class BossController : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (attackCooldownTimer > 0f)
+            attackCooldownTimer -= Time.deltaTime;
+
         currentState?.Tick();
     }
 
@@ -50,10 +59,31 @@ public class BossController : MonoBehaviour
         currentState?.FixedTick();
     }
 
+    public virtual Transform GetNormalAttackPoint()
+    {
+        return null;
+    }
+
+    public virtual bool GetNormalAttackHorizontal()
+    {
+        return true;
+    }
+
+    public void StartAttackCooldown()
+    {
+        attackCooldownTimer = attackCooldown;
+    }
+
     public virtual void SelectPattern()
     {
 
     }
+
+    public virtual bool TryChasePattern()
+    {
+        return false;
+    }
+
     public void ChangeState(IState newState)
     {
         if (currentState == newState)

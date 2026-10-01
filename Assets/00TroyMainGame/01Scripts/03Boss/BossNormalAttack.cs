@@ -4,19 +4,24 @@ public class BossNormalAttack : MonoBehaviour
 {
     [Header("Component")]
     [SerializeField] private BossModel bossModel;
+    [SerializeField] private BossTelegraph telegraph;
 
     [Header("Normal Attack")]
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private Vector2 attackSize;
+    [SerializeField] private Vector2 horizontalAttackSize;
+    [SerializeField] private Vector2 verticalAttackSize;
     [SerializeField] private LayerMask playerLayer;
 
-    public void Attack()
+    private Transform currentAttackPoint;
+    private Vector2 currentAttackSize;
+
+    public void Attack(Transform attackPoint, bool isHorizontal)
     {
-        Debug.Log("Boss Normal Attack");
+        currentAttackPoint = attackPoint;
+        currentAttackSize = GetAttackSize(isHorizontal);
 
         Collider2D hit = Physics2D.OverlapBox(
             attackPoint.position,
-            attackSize,
+            currentAttackSize,
             0f,
             playerLayer);
 
@@ -28,8 +33,6 @@ public class BossNormalAttack : MonoBehaviour
         if (damageable == null)
             return;
 
-        Debug.Log($"Normal Attack Hit : {hit.name}");
-
         Vector2 hitDirection = (
             hit.transform.position - transform.position
         ).normalized;
@@ -39,14 +42,35 @@ public class BossNormalAttack : MonoBehaviour
             hitDirection);
     }
 
+    public void ShowTelegraph(Transform attackPoint, bool isHorizontal)
+    {
+        currentAttackPoint = attackPoint;
+        currentAttackSize = GetAttackSize(isHorizontal);
+
+        telegraph.Show(
+            attackPoint.position,
+            currentAttackSize);
+    }
+
+    public void HideTelegraph()
+    {
+        telegraph.Hide();
+    }
+
+    private Vector2 GetAttackSize(bool isHorizontal)
+    {
+        return isHorizontal
+            ? horizontalAttackSize
+            : verticalAttackSize;
+    }
+
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
+        if (currentAttackPoint == null)
             return;
 
         Gizmos.DrawWireCube(
-            attackPoint.position,
-            attackSize
-        );
+            currentAttackPoint.position,
+            currentAttackSize);
     }
 }

@@ -31,7 +31,7 @@ public class BossAttackSelectState : IState
 
     public int SelectAttack()
     {
-        return 0;
-        //return Random.Range(0, 3);
+        return 4;
+        //return Random.Range(0, 6);
     }
 }

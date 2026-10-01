@@ -20,7 +20,14 @@ public class BossChaseState : IState
             controller.transform.position,
             controller.Target.position);
 
-        if (distance <= controller.Model.AttackRange)
+        if (controller.CanAttack &&
+            controller.TryChasePattern())
+        {
+            return;
+        }
+
+        if (distance <= controller.Model.AttackRange &&
+            controller.CanAttack)
         {
             controller.ChangeState(controller.AttackSelectState);
         }
@@ -28,9 +35,17 @@ public class BossChaseState : IState
 
     public void FixedTick()
     {
+        float distance = Vector2.Distance(
+        controller.transform.position,
+        controller.Target.position);
+
+        if (distance <= controller.Model.AttackRange)
+            return;
+
         Vector2 direction = (
             controller.Target.position - controller.transform.position
         ).normalized;
+
 
         Vector2 nextPos =
             controller.Rb.position

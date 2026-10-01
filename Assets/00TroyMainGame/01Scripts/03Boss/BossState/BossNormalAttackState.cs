@@ -4,9 +4,12 @@ public class BossNormalAttackState : IState
 {
     private BossController controller;
 
+    private Transform attackPoint;
+    private bool isHorizontal;
+
     private float attackTimer;
-    private float telegraphDuration = 0.5f;
-    private float attackDuration = 1f;
+    private float telegraphDuration = 1.2f;
+    private float attackDuration = 2f;
 
     private bool isAttack;
 
@@ -20,6 +23,9 @@ public class BossNormalAttackState : IState
         attackTimer = 0f;
         isAttack = false;
 
+        attackPoint = controller.GetNormalAttackPoint();
+        isHorizontal = controller.GetNormalAttackHorizontal();
+
         ShowTelegraph();
     }
 
@@ -29,7 +35,9 @@ public class BossNormalAttackState : IState
 
         if (!isAttack && attackTimer >= telegraphDuration)
         {
-            controller.NormalAttack.Attack();
+            controller.NormalAttack.Attack(
+                attackPoint,
+                isHorizontal);
 
             HideTelegraph();
 
@@ -38,6 +46,7 @@ public class BossNormalAttackState : IState
 
         if (attackTimer >= attackDuration)
         {
+            controller.StartAttackCooldown();
             controller.ChangeState(controller.ChaseState);
         }
     }
@@ -54,11 +63,13 @@ public class BossNormalAttackState : IState
 
     private void ShowTelegraph()
     {
-
+        controller.NormalAttack.ShowTelegraph(
+            attackPoint,
+            isHorizontal);
     }
 
     private void HideTelegraph()
     {
-
+        controller.NormalAttack.HideTelegraph();
     }
 }
