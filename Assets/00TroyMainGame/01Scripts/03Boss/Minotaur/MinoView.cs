@@ -8,6 +8,8 @@ public class MinoView : MonoBehaviour
     [Header("Sprite")]
     [SerializeField] private Sprite normalSprite;
     [SerializeField] private Sprite dashSprite;
+    [SerializeField] private Sprite stunSprite;
+    [SerializeField] private Sprite deadSprite;
 
     [Header("Attack Point")]
     [SerializeField] private Transform leftAttackPoint;
@@ -58,5 +60,15 @@ public class MinoView : MonoBehaviour
     public void SetDashSprite()
     {
         spriteRenderer.sprite = dashSprite;
+    }
+
+    public void SetStunSprite()
+    {
+        spriteRenderer.sprite = stunSprite;
+    }
+
+    public void SetDeadSprite()
+    {
+        spriteRenderer.sprite = deadSprite;
     }
 }

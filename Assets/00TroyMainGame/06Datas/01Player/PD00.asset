@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: PD00
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   maxHP: 100
-  attack: 10
+  moveSpeed: 3
+  attack: 100
   defence: 5
+  attackRange: 2
+  attackCooldown: 2

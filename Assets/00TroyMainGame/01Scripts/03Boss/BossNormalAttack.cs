@@ -4,7 +4,6 @@ public class BossNormalAttack : MonoBehaviour
 {
     [Header("Component")]
     [SerializeField] private BossModel bossModel;
-    [SerializeField] private BossTelegraph telegraph;
 
     [Header("Normal Attack")]
     [SerializeField] private Vector2 horizontalAttackSize;
@@ -23,12 +22,14 @@ public class BossNormalAttack : MonoBehaviour
             attackPoint.position,
             currentAttackSize,
             0f,
-            playerLayer);
+            playerLayer
+        );
 
         if (hit == null)
             return;
 
-        IDamageable damageable = hit.GetComponent<IDamageable>();
+        IDamageable damageable =
+            hit.GetComponent<IDamageable>();
 
         if (damageable == null)
             return;
@@ -39,20 +40,29 @@ public class BossNormalAttack : MonoBehaviour
 
         damageable.TakeDamage(
             bossModel.Attack,
-            hitDirection);
+            hitDirection
+        );
     }
 
-    public void ShowTelegraph(Transform attackPoint, bool isHorizontal)
+    public void ShowTelegraph(
+        BossTelegraph telegraph,
+        Transform attackPoint,
+        bool isHorizontal)
     {
         currentAttackPoint = attackPoint;
         currentAttackSize = GetAttackSize(isHorizontal);
 
+        telegraph.SetColor(
+            new Color(1f, 0f, 0f, 0.3f)
+        );
+
         telegraph.Show(
             attackPoint.position,
-            currentAttackSize);
+            currentAttackSize
+        );
     }
 
-    public void HideTelegraph()
+    public void HideTelegraph(BossTelegraph telegraph)
     {
         telegraph.Hide();
     }
@@ -71,6 +81,7 @@ public class BossNormalAttack : MonoBehaviour
 
         Gizmos.DrawWireCube(
             currentAttackPoint.position,
-            currentAttackSize);
+            currentAttackSize
+        );
     }
 }

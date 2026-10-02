@@ -1,27 +1,48 @@
 using UnityEngine;
 
+public enum MinoPhase
+{
+    Phase1,
+    Phase2,
+    Phase3
+}
+
 public class MinoController : BossController
 {
     [Header("Component")]
     [SerializeField] private MinoView view;
-    [SerializeField] private MinoDashAttack dashAttack;
 
     [Header("Dash")]
+    [SerializeField] private MinoDashAttack dashAttack;
     [SerializeField] private float dashRange = 7f;
     [SerializeField] private float dashCheckCooldown = 5f;
 
-    private float dashCheckTimer;
+    [Header("Sweep")]
+    [SerializeField] private MinoSweepAttack sweepAttack;
 
-    public float DashRange => dashRange;
-    public bool CanCheckDash => dashCheckTimer <= 0f;
+    [Header("Death")]
+    [SerializeField] private MinoDeath minoDeath;
 
     private MinoDashAttackState dashAttackState;
+    private MinoSweepAttackState sweepAttackState;
+    private MinoStunState stunState;
+    private MinoDeadState deadState;
+
+    private MinoPhase currentPhase;
+
+    private float dashCheckTimer;
+    private bool isDirectionLocked;
 
     public MinoView View => view;
     public MinoDashAttack DashAttack => dashAttack;
+    public MinoSweepAttack SweepAttack => sweepAttack;
+    public MinoDeath MinoDeath => minoDeath;
+    public MinoPhase CurrentPhase => currentPhase;
 
-    private bool isDirectionLocked;
+    public MinoStunState StunState => stunState;
 
+    public float DashRange => dashRange;
+    public bool CanCheckDash => dashCheckTimer <= 0f;
     public bool IsDirectionLocked => isDirectionLocked;
 
     protected override void Awake()
@@ -29,6 +50,14 @@ public class MinoController : BossController
         base.Awake();
 
         dashAttackState = new MinoDashAttackState(this);
+        sweepAttackState = new MinoSweepAttackState(this);
+        stunState = new MinoStunState(this);
+        deadState = new MinoDeadState(this);
+
+        currentPhase = MinoPhase.Phase1;
+
+        Model.OnHPChanged += CheckPhase;
+        Model.OnDead += HandleDead;
     }
 
     protected override void Update()
@@ -81,9 +110,9 @@ public class MinoController : BossController
                 break;
 
             case 5:
-                //SweepState
+                ChangeState(sweepAttackState);
                 break;
-        }   
+        }
     }
 
     public override bool TryChasePattern()
@@ -121,5 +150,60 @@ public class MinoController : BossController
     public void StartDashCheckCooldown()
     {
         dashCheckTimer = dashCheckCooldown;
+    }
+
+    private void CheckPhase()
+    {
+        float hpRatio =
+            Model.CurrentHP / Model.MaxHP;
+
+        if (hpRatio <= 0.25f)
+        {
+            ChangePhase(MinoPhase.Phase3);
+        }
+        else if (hpRatio <= 0.5f)
+        {
+            ChangePhase(MinoPhase.Phase2);
+        }
+        else
+        {
+            ChangePhase(MinoPhase.Phase1);
+        }
+    }
+
+    private void ChangePhase(MinoPhase newPhase)
+    {
+        if (currentPhase == newPhase)
+            return;
+
+        currentPhase = newPhase;
+
+        switch (currentPhase)
+        {
+            case MinoPhase.Phase1:
+                DashAttack.SetPhaseMultiplier(1f);
+                break;
+
+            case MinoPhase.Phase2:
+                DashAttack.SetPhaseMultiplier(1.25f);
+                break;
+
+            case MinoPhase.Phase3:
+                DashAttack.SetPhaseMultiplier(1.5f);
+                break;
+        }
+
+        Debug.Log($"Minotaur Phase : {currentPhase}");
+    }
+
+    private void HandleDead()
+    {
+        ChangeState(deadState);
+    }
+
+    private void OnDestroy()
+    {
+        Model.OnHPChanged -= CheckPhase;
+        Model.OnDead -= HandleDead;
     }
 }

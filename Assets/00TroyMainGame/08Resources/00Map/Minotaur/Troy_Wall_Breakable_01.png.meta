@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a24cce40ee739764eafd5e4d208154bf
+guid: 1c7a4fdd8012d0a49bb1f9736bbc8268
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 575005625078396335
-    second: Troy_Wall_Left_End_Tilemap_0
+      213: -1059050193234697686
+    second: Troy_Wall_Breakable_01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Troy_Wall_Left_End_Tilemap_0
+      name: Troy_Wall_Breakable_01_Up_01
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
-        width: 32
-        height: 32
+        y: 46
+        width: 33
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,20 +128,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa536aac194daf700800000000000000
-      internalID: 575005625078396335
+      spriteID: a22efe8d57f7d41f0800000000000000
+      internalID: -1059050193234697686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Wall_Left_End_Tilemap_1
+      name: Troy_Wall_Breakable_01_Up_02
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 32
-        height: 32
+        x: 33
+        y: 46
+        width: 63
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09448d420c80fb941bc8df1f01bffcdf
-      internalID: 931061245
+      spriteID: 146e0851ebbec5a4fa8478640362cac1
+      internalID: 619984296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Wall_Left_End_Tilemap_2
+      name: Troy_Wall_Breakable_01_Middle_01
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 32
-        height: 32
+        y: 29
+        width: 33
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0229d1f2492daff45877c51bf96afdb7
-      internalID: 42916786
+      spriteID: 9be2504735cae9644a820081f8225e71
+      internalID: -939736483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Wall_Left_End_Tilemap_3
+      name: Troy_Wall_Breakable_01_Middle_02
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
+        x: 33
+        y: 29
+        width: 63
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,86 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ef57c9721159b499f2695b1dbbb368
-      internalID: 1622670348
+      spriteID: 68d7aef93f3d6ba4c88c99d7e5654454
+      internalID: -1577179185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troy_Wall_Left_End_Tilemap_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ed0523be8622d64a89588f29e96ca82
-      internalID: 1920012480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Troy_Wall_Left_End_Tilemap_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4909979e93c73964f9ca888024f5b4bc
-      internalID: 754782860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Troy_Wall_Left_End_Tilemap_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bde04968553e1b14ca02fdc8d7b5cc02
-      internalID: 1563798379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Troy_Wall_Left_End_Tilemap_7
+      name: Troy_Wall_Breakable_01_Under
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 96
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dd45046d8572dc4fa2b76cb0948646d
-      internalID: -1878212146
+      spriteID: 3d0a69e77cb545841acd67cc255489a0
+      internalID: -1648440945
       vertices: []
       indices: 
       edges: []
@@ -292,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: dac3390dad77b624f85ce754774be31f
+    spriteID: 54408ecfdcc89814bb589657c458074a
     internalID: 0
     vertices: []
     indices: 
@@ -300,18 +234,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Troy_Wall_Left_End_Tilemap_0: 575005625078396335
-      Troy_Wall_Left_End_Tilemap_1: 931061245
-      Troy_Wall_Left_End_Tilemap_2: 42916786
-      Troy_Wall_Left_End_Tilemap_3: 1622670348
-      Troy_Wall_Left_End_Tilemap_4: 1920012480
-      Troy_Wall_Left_End_Tilemap_5: 754782860
-      Troy_Wall_Left_End_Tilemap_6: 1563798379
-      Troy_Wall_Left_End_Tilemap_7: -1878212146
+      Troy_Wall_Breakable_01_3: -201595714
+      Troy_Wall_Breakable_01_Down_01: -1419135128
+      Troy_Wall_Breakable_01_Down_02: 1378537921
+      Troy_Wall_Breakable_01_Middle_01: -939736483
+      Troy_Wall_Breakable_01_Middle_02: -1577179185
+      Troy_Wall_Breakable_01_Under: -1648440945
+      Troy_Wall_Breakable_01_Up_01: -1059050193234697686
+      Troy_Wall_Breakable_01_Up_02: 619984296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

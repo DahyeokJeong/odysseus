@@ -5,7 +5,10 @@ public class BossController : MonoBehaviour
     [Header("Component")]
     [SerializeField] private BossModel model;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private BossMovement movement;
+    [SerializeField] private BossDeath death;
     [SerializeField] private BossNormalAttack normalAttack;
+    [SerializeField] private BossTelegraph telegraphPrefab;
 
     [Header("Target")]
     [SerializeField] private Transform target;
@@ -23,10 +26,15 @@ public class BossController : MonoBehaviour
     protected BossAttackSelectState attackSelectState;
     protected BossNormalAttackState normalAttackState;
 
+    private BossTelegraph telegraph;
+
     public BossModel Model => model;
     public Rigidbody2D Rb => rb;
+    public BossMovement Movement => movement;
+    public BossDeath Death => death;
     public Transform Target => target;
     public BossNormalAttack NormalAttack => normalAttack;
+    public BossTelegraph Telegraph => telegraph;
 
     public BossIdleState IdleState => idleState;
     public BossChaseState ChaseState => chaseState;
@@ -35,6 +43,13 @@ public class BossController : MonoBehaviour
 
     protected virtual void Awake()
     {
+        telegraph = Instantiate(
+            telegraphPrefab,
+            transform
+        );
+
+        telegraph.Hide();
+
         idleState = new BossIdleState(this);
         chaseState = new BossChaseState(this);
         attackSelectState = new BossAttackSelectState(this);

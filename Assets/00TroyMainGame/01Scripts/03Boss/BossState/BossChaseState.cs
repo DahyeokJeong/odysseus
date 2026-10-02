@@ -36,22 +36,18 @@ public class BossChaseState : IState
     public void FixedTick()
     {
         float distance = Vector2.Distance(
-        controller.transform.position,
-        controller.Target.position);
+            controller.transform.position,
+            controller.Target.position);
 
         if (distance <= controller.Model.AttackRange)
             return;
 
         Vector2 direction = (
-            controller.Target.position - controller.transform.position
+            controller.Target.position
+            - controller.transform.position
         ).normalized;
 
-
-        Vector2 nextPos =
-            controller.Rb.position
-          + direction * controller.Model.MoveSpeed * Time.fixedDeltaTime;
-
-        controller.Rb.MovePosition(nextPos);
+        controller.Movement.Move(direction);
     }
 
     public void Exit()
