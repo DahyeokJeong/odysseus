@@ -8,6 +8,8 @@ public class YSorting : MonoBehaviour
     [Header("Sorting")]
     [SerializeField] private Transform sortingPoint;
 
+    private const float SORTING_SCALE = 10f;
+
     private void Awake()
     {
         if (spriteRenderers == null ||
@@ -22,7 +24,7 @@ public class YSorting : MonoBehaviour
     {
         int sortingOrder =
             Mathf.RoundToInt(
-                -sortingPoint.position.y * 100f
+                -sortingPoint.position.y * SORTING_SCALE
             );
 
         foreach (SpriteRenderer sr in spriteRenderers)

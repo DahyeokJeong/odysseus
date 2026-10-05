@@ -49,9 +49,8 @@ public class PlayerMovement : MonoBehaviour
         if (hit.collider == null || hit.collider.isTrigger)
             return false;
 
-        Vector2 hitDirection = ((Vector2)hit.collider.bounds.center - rb.position).normalized;
-
-        if (Vector2.Dot(moveDirection, hitDirection) < 0f)
+        // 벽에서 빠져나가는 방향의 이동은 허용
+        if (Vector2.Dot(moveDirection, hit.normal) > 0f)
             return false;
 
         return true;

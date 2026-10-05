@@ -8,15 +8,18 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 MoveInput { get; private set; }
     public Vector2 MouseWorldPos { get; private set; }
     public bool AttackPressed { get; private set; }
-    public bool InteractPressed {  get; private set; }
+    public bool InteractPressed { get; private set; }
 
     private void Awake()
     {
-        inputActions = new();
+        inputActions = new PlayerInputActions();
     }
 
     private void OnEnable()
     {
+        if (inputActions == null)
+            inputActions = new PlayerInputActions();
+
         inputActions.Player.Move.performed += OnMove;
         inputActions.Player.Move.canceled += OnMove;
 
@@ -31,6 +34,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnDisable()
     {
+        if (inputActions == null)
+            return;
+
         inputActions.Player.Move.performed -= OnMove;
         inputActions.Player.Move.canceled -= OnMove;
 
@@ -84,12 +90,17 @@ public class PlayerInputHandler : MonoBehaviour
         if (mainCam == null)
             return;
 
-        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
+        Vector2 mouseScreenPos =
+            Mouse.current.position.ReadValue();
 
-        Vector3 mouseWorldPos = mainCam.ScreenToWorldPoint(new Vector3(
-                                                                mouseScreenPos.x,
-                                                                mouseScreenPos.y,
-                                                                -mainCam.transform.position.z));
+        Vector3 mouseWorldPos =
+            mainCam.ScreenToWorldPoint(
+                new Vector3(
+                    mouseScreenPos.x,
+                    mouseScreenPos.y,
+                    -mainCam.transform.position.z
+                )
+            );
 
         MouseWorldPos = mouseWorldPos;
     }
