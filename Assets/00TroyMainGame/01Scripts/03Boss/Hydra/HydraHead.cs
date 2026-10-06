@@ -31,7 +31,16 @@ public class HydraHead : MonoBehaviour, IDamageable
         currentHP -= damage;
         currentHP = Mathf.Max(0f, currentHP);
 
+        Debug.Log($"{gameObject.name} HP : {currentHP}");
+
         if (currentHP <= 0f)
             OnDown?.Invoke(this);
+    }
+
+    public void Regenerate()
+    {
+        currentHP = maxHP;
+
+        Debug.Log($"{gameObject.name} Regenerate : {currentHP}");
     }
 }
