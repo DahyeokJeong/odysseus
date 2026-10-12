@@ -16,6 +16,8 @@ public class SmallHeadDownState : IState
         controller.Gimmick.OnSuccess += HandleSuccess;
         controller.Gimmick.OnFail += HandleFail;
 
+        controller.InputHandler.LockInput();
+
         controller.Gimmick.StartGimmick(
             controller.GimmickPos
         );
@@ -35,6 +37,8 @@ public class SmallHeadDownState : IState
     {
         controller.Gimmick.OnSuccess -= HandleSuccess;
         controller.Gimmick.OnFail -= HandleFail;
+
+        controller.InputHandler.UnlockInput();
     }
 
     private void HandleSuccess()

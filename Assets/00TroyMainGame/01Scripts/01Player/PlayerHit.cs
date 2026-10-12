@@ -8,12 +8,13 @@ public class PlayerHit : MonoBehaviour, IDamageable
     [SerializeField] private PlayerModel model;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private PlayerPoison poison;
 
     [Header("Hit")]
     [SerializeField] private float hitDuration = 0.2f;
     [SerializeField] private float knockbackDistance = 0.2f;
 
-    public bool IsHitFinished { get; private set; }
+    public bool IsHitFinished { get; private set; } = true;
 
     public event Action OnHit;
 
@@ -73,7 +74,9 @@ public class PlayerHit : MonoBehaviour, IDamageable
             yield return new WaitForFixedUpdate();
         }
 
-        sr.color = originalColor;
+        sr.color = poison != null && poison.IsPoisoned
+                ? poison.PoisonColor
+                : originalColor;
 
         IsHitFinished = true;
         hitCoroutine = null;

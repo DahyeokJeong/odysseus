@@ -10,11 +10,13 @@ public class HydraHead : MonoBehaviour, IDamageable
     [SerializeField] private bool isMainHead;
 
     private float currentHP;
+    private bool isInvincible;
 
     public float CurrentHP => currentHP;
     public float MaxHP => maxHP;
     public bool IsMainHead => isMainHead;
     public bool IsDown => currentHP <= 0f;
+    public bool IsInvincible => isInvincible;
 
     public event Action<HydraHead> OnDown;
 
@@ -25,7 +27,7 @@ public class HydraHead : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage, Vector2 hitDirection)
     {
-        if (IsDown)
+        if (IsDown || isInvincible)
             return;
 
         currentHP -= damage;
@@ -42,5 +44,10 @@ public class HydraHead : MonoBehaviour, IDamageable
         currentHP = maxHP;
 
         Debug.Log($"{gameObject.name} Regenerate : {currentHP}");
+    }
+
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
     }
 }

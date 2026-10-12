@@ -9,6 +9,7 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 MouseWorldPos { get; private set; }
     public bool AttackPressed { get; private set; }
     public bool InteractPressed { get; private set; }
+    public bool IsInputLocked { get; private set; }
 
     private void Awake()
     {
@@ -51,21 +52,33 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnMove(InputAction.CallbackContext context)
     {
+        if (IsInputLocked)
+            return;
+
         MoveInput = context.ReadValue<Vector2>();
     }
 
     private void OnAttack(InputAction.CallbackContext context)
     {
+        if (IsInputLocked)
+            return;
+
         AttackPressed = true;
     }
 
     private void OnInven(InputAction.CallbackContext context)
     {
+        if (IsInputLocked)
+            return;
+
         EventBus.ToggleInventory();
     }
 
     private void OnInteract(InputAction.CallbackContext context)
     {
+        if (IsInputLocked)
+            return;
+
         InteractPressed = true;
     }
 
@@ -103,5 +116,21 @@ public class PlayerInputHandler : MonoBehaviour
             );
 
         MouseWorldPos = mouseWorldPos;
+    }
+
+    public void LockInput()
+    {
+        IsInputLocked = true;
+
+        MoveInput = Vector2.zero;
+        AttackPressed = false;
+        InteractPressed = false;
+    }
+
+    public void UnlockInput()
+    {
+        IsInputLocked = false;
+
+        MoveInput = inputActions.Player.Move.ReadValue<Vector2>();
     }
 }

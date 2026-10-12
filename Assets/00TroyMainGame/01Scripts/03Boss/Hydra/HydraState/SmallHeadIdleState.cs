@@ -9,7 +9,7 @@ public class SmallHeadIdleState : IState
 
     public void Enter()
     {
-
+        controller.View.PlayIdle();
     }
 
     public void Tick()
@@ -24,6 +24,6 @@ public class SmallHeadIdleState : IState
 
     public void Exit()
     {
-
+        controller.View.StopIdle();
     }
 }

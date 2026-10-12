@@ -11,8 +11,6 @@ public class SmallHeadSeveredState : IState
 
     public void Enter()
     {
-        Debug.Log($"{controller.gameObject.name} Severed State");
-
         controller.SeverHead();
     }
 

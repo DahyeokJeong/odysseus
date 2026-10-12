@@ -781,6 +781,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &49007098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49007099}
+  m_Layer: 11
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &49007099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49007098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.69, y: -1.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 859650086}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &53150757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1244,8 @@ GameObject:
   - component: {fileID: 118762102}
   - component: {fileID: 118762100}
   - component: {fileID: 118762101}
+  - component: {fileID: 118762104}
+  - component: {fileID: 118762103}
   m_Layer: 11
   m_Name: Troy_Hydra_Head_Main
   m_TagString: Untagged
@@ -1235,6 +1268,7 @@ Transform:
   m_Children:
   - {fileID: 300586541}
   - {fileID: 711178844}
+  - {fileID: 443398687}
   m_Father: {fileID: 144502574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &118762099
@@ -1363,6 +1397,49 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 118762099}
   sortingPoint: {fileID: 711178844}
+--- !u!114 &118762103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118762097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4536fa6610659f54798b5aa7e9be46c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraPoisonBreath
+  firePoint: {fileID: 443398687}
+  player: {fileID: 1599407326}
+  playerModel: {fileID: 1599407338}
+  playerPoison: {fileID: 1599407345}
+  warningDuration: 2
+  breathDuration: 3
+  damage: 5
+  damageInterval: 1
+  attackRange: 15
+  attackAngle: 150
+  attackDirection: {x: 0, y: -1}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  warningEffect: {fileID: 0}
+  breathEffect: {fileID: 0}
+--- !u!114 &118762104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118762097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ab31ab8bb8a7149a38bcb69024625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainHeadController
+  head: {fileID: 118762100}
+  breath: {fileID: 118762103}
+  hydraController: {fileID: 144502575}
 --- !u!1 &119678304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,6 +1863,7 @@ Transform:
   - {fileID: 528976007}
   - {fileID: 859650086}
   - {fileID: 1933589477}
+  - {fileID: 344525695}
   m_Father: {fileID: 1957678121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &144502575
@@ -1801,11 +1879,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HydraController
   mainHead: {fileID: 118762100}
+  mainHeadController: {fileID: 118762104}
+  breathInterval: 15
   smallHeads:
-  - {fileID: 971407016}
-  - {fileID: 528976009}
-  - {fileID: 859650088}
-  - {fileID: 1933589480}
+  - {fileID: 971407019}
+  - {fileID: 528976013}
+  - {fileID: 859650091}
+  - {fileID: 1933589483}
+  attackInterval: 2
 --- !u!1 &153977809
 GameObject:
   m_ObjectHideFlags: 0
@@ -12951,6 +13032,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964c238a8bfaa294a83aaa855c7f5d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableWall
+--- !u!1 &344525694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344525695}
+  - component: {fileID: 344525696}
+  m_Layer: 0
+  m_Name: ProjectilePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &344525695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344525694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 144502574}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344525696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344525694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 882204354af7d5346b6b007b103444ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraProjectilePool
+  projectilePrefab: {fileID: 7820316715375901661, guid: 2da126ac49778bb4ebf029fe56d7456e, type: 3}
+  defaultCapacity: 10
+  maxSize: 20
 --- !u!1 &354128007
 GameObject:
   m_ObjectHideFlags: 0
@@ -14281,6 +14409,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440321154}
   m_CullTransparentMesh: 1
+--- !u!1 &443398686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443398687}
+  m_Layer: 11
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &443398687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443398686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 118762098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &444646951
 GameObject:
   m_ObjectHideFlags: 0
@@ -14311,6 +14470,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1983665607}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &446654861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 446654862}
+  m_Layer: 11
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &446654862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446654861}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.23, y: -1.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 528976007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &446825001
 GameObject:
@@ -30454,9 +30644,11 @@ GameObject:
   - component: {fileID: 528976008}
   - component: {fileID: 528976011}
   - component: {fileID: 528976013}
+  - component: {fileID: 528976015}
   - component: {fileID: 528976012}
   - component: {fileID: 528976009}
   - component: {fileID: 528976010}
+  - component: {fileID: 528976014}
   m_Layer: 11
   m_Name: Troy_Hyder_Head_02
   m_TagString: Untagged
@@ -30480,6 +30672,7 @@ Transform:
   - {fileID: 408883416}
   - {fileID: 854642813}
   - {fileID: 1772217577}
+  - {fileID: 446654862}
   m_Father: {fileID: 144502574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &528976008
@@ -30637,7 +30830,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HydraHeadController
   head: {fileID: 528976009}
   gimmick: {fileID: 528976012}
+  view: {fileID: 528976014}
+  inputHandler: {fileID: 1599407329}
+  poisonAttack: {fileID: 528976015}
   gimmickPos: {fileID: 1772217577}
+  hydraController: {fileID: 144502575}
+  hitBox: {fileID: 408883415}
+  severedSprite: {fileID: 21300000, guid: 6afc23769c4ceba40b940fee20129a9b, type: 3}
+--- !u!114 &528976014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528976006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35c60e6da0d0454abafbfc6e0977a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraHeadView
+  sr: {fileID: 528976008}
+  idleSprite01: {fileID: 21300000, guid: 43d6c6c39cde83d4ca8367aa874fed78, type: 3}
+  idleSprite02: {fileID: 21300000, guid: 3e3a5d7fe995a984ebc902b851aa8974, type: 3}
+  frameDuration: 0.98
+--- !u!114 &528976015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528976006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608cac88800a997468660d0bb3d7567d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraPoisonProjectileAttack
+  projectilePool: {fileID: 344525696}
+  player: {fileID: 1599407326}
+  firePoint: {fileID: 446654862}
+  damage: 10
+  attackDelay: 0.8
 --- !u!1 &534098096
 GameObject:
   m_ObjectHideFlags: 0
@@ -37227,7 +37459,9 @@ GameObject:
   - component: {fileID: 859650092}
   - component: {fileID: 859650091}
   - component: {fileID: 859650088}
+  - component: {fileID: 859650094}
   - component: {fileID: 859650089}
+  - component: {fileID: 859650093}
   m_Layer: 11
   m_Name: Troy_Hyder_Head_04
   m_TagString: Untagged
@@ -37251,6 +37485,7 @@ Transform:
   - {fileID: 694124615}
   - {fileID: 1841607043}
   - {fileID: 66956814}
+  - {fileID: 49007099}
   m_Father: {fileID: 144502574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &859650087
@@ -37393,7 +37628,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HydraHeadController
   head: {fileID: 859650088}
   gimmick: {fileID: 859650092}
+  view: {fileID: 859650093}
+  inputHandler: {fileID: 1599407329}
+  poisonAttack: {fileID: 859650094}
   gimmickPos: {fileID: 66956814}
+  hydraController: {fileID: 144502575}
+  hitBox: {fileID: 694124614}
+  severedSprite: {fileID: 21300000, guid: e2eb55cf063e6104181686e0f1acd2db, type: 3}
 --- !u!114 &859650092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37409,6 +37650,39 @@ MonoBehaviour:
   gimmickUI: {fileID: 847354909}
   sequenceLength: 4
   timeLimit: 5
+--- !u!114 &859650093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859650085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35c60e6da0d0454abafbfc6e0977a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraHeadView
+  sr: {fileID: 859650087}
+  idleSprite01: {fileID: 21300000, guid: 8fee255a962fe8e4a81311a5d66d6fc2, type: 3}
+  idleSprite02: {fileID: 21300000, guid: 7eb5b5740c0280f489e0c3f601bc7044, type: 3}
+  frameDuration: 0.91
+--- !u!114 &859650094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859650085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608cac88800a997468660d0bb3d7567d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraPoisonProjectileAttack
+  projectilePool: {fileID: 344525696}
+  player: {fileID: 1599407326}
+  firePoint: {fileID: 49007099}
+  damage: 10
+  attackDelay: 0.8
 --- !u!1 &863330211
 GameObject:
   m_ObjectHideFlags: 0
@@ -53454,12 +53728,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 971407014}
+  - component: {fileID: 971407022}
   - component: {fileID: 971407015}
   - component: {fileID: 971407018}
   - component: {fileID: 971407020}
   - component: {fileID: 971407019}
   - component: {fileID: 971407016}
   - component: {fileID: 971407017}
+  - component: {fileID: 971407021}
   m_Layer: 11
   m_Name: Troy_Hyder_Head_01
   m_TagString: Untagged
@@ -53483,6 +53759,7 @@ Transform:
   - {fileID: 1325014965}
   - {fileID: 1035595130}
   - {fileID: 1286117892}
+  - {fileID: 1964054932}
   m_Father: {fileID: 144502574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &971407015
@@ -53625,7 +53902,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HydraHeadController
   head: {fileID: 971407016}
   gimmick: {fileID: 971407020}
+  view: {fileID: 971407021}
+  inputHandler: {fileID: 1599407329}
+  poisonAttack: {fileID: 971407022}
   gimmickPos: {fileID: 1286117892}
+  hydraController: {fileID: 144502575}
+  hitBox: {fileID: 1325014964}
+  severedSprite: {fileID: 21300000, guid: 6afc23769c4ceba40b940fee20129a9b, type: 3}
 --- !u!114 &971407020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53641,6 +53924,39 @@ MonoBehaviour:
   gimmickUI: {fileID: 847354909}
   sequenceLength: 4
   timeLimit: 5
+--- !u!114 &971407021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971407013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35c60e6da0d0454abafbfc6e0977a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraHeadView
+  sr: {fileID: 971407015}
+  idleSprite01: {fileID: 21300000, guid: 43d6c6c39cde83d4ca8367aa874fed78, type: 3}
+  idleSprite02: {fileID: 21300000, guid: 3e3a5d7fe995a984ebc902b851aa8974, type: 3}
+  frameDuration: 0.85
+--- !u!114 &971407022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971407013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608cac88800a997468660d0bb3d7567d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraPoisonProjectileAttack
+  projectilePool: {fileID: 344525696}
+  player: {fileID: 1599407326}
+  firePoint: {fileID: 1964054932}
+  damage: 10
+  attackDelay: 0.8
 --- !u!1 &982586054
 GameObject:
   m_ObjectHideFlags: 0
@@ -73699,6 +74015,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -110}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &1492935640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492935641}
+  m_Layer: 11
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1492935641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492935640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.46, y: -1.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1933589477}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1505266044
 GameObject:
   m_ObjectHideFlags: 0
@@ -75305,6 +75652,7 @@ GameObject:
   - component: {fileID: 1599407326}
   - component: {fileID: 1599407325}
   - component: {fileID: 1599407330}
+  - component: {fileID: 1599407345}
   - component: {fileID: 1599407329}
   - component: {fileID: 1599407328}
   - component: {fileID: 1599407332}
@@ -75587,6 +75935,7 @@ MonoBehaviour:
   model: {fileID: 1599407338}
   sr: {fileID: 1599407325}
   rb: {fileID: 1599407334}
+  poison: {fileID: 1599407345}
   hitDuration: 0.2
   knockbackDistance: 0.2
 --- !u!114 &1599407338
@@ -75688,6 +76037,25 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1599407325}
   sortingPoint: {fileID: 340888131}
+--- !u!114 &1599407345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599407324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109e108d3dee9ed4f8a10b4a134a76f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPoison
+  model: {fileID: 1599407338}
+  sr: {fileID: 1599407325}
+  hit: {fileID: 1599407337}
+  poisonDuration: 3
+  tickInterval: 1
+  tickDamage: 2
+  poisonColor: {r: 0.18983625, g: 0.509434, b: 0.18983626, a: 1}
 --- !u!1 &1605532846
 GameObject:
   m_ObjectHideFlags: 0
@@ -90281,10 +90649,12 @@ GameObject:
   - component: {fileID: 1933589477}
   - component: {fileID: 1933589478}
   - component: {fileID: 1933589480}
+  - component: {fileID: 1933589485}
   - component: {fileID: 1933589481}
   - component: {fileID: 1933589483}
   - component: {fileID: 1933589482}
   - component: {fileID: 1933589479}
+  - component: {fileID: 1933589484}
   m_Layer: 11
   m_Name: Troy_Hyder_Head_05
   m_TagString: Untagged
@@ -90308,6 +90678,7 @@ Transform:
   - {fileID: 1664589593}
   - {fileID: 421645721}
   - {fileID: 921551546}
+  - {fileID: 1492935641}
   m_Father: {fileID: 144502574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1933589478
@@ -90465,7 +90836,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HydraHeadController
   head: {fileID: 1933589480}
   gimmick: {fileID: 1933589482}
+  view: {fileID: 1933589484}
+  inputHandler: {fileID: 1599407329}
+  poisonAttack: {fileID: 1933589485}
   gimmickPos: {fileID: 921551546}
+  hydraController: {fileID: 144502575}
+  hitBox: {fileID: 1664589592}
+  severedSprite: {fileID: 21300000, guid: e2eb55cf063e6104181686e0f1acd2db, type: 3}
+--- !u!114 &1933589484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933589476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35c60e6da0d0454abafbfc6e0977a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraHeadView
+  sr: {fileID: 1933589478}
+  idleSprite01: {fileID: 21300000, guid: 8fee255a962fe8e4a81311a5d66d6fc2, type: 3}
+  idleSprite02: {fileID: 21300000, guid: 7eb5b5740c0280f489e0c3f601bc7044, type: 3}
+  frameDuration: 1.06
+--- !u!114 &1933589485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933589476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608cac88800a997468660d0bb3d7567d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HydraPoisonProjectileAttack
+  projectilePool: {fileID: 344525696}
+  player: {fileID: 1599407326}
+  firePoint: {fileID: 1492935641}
+  damage: 10
+  attackDelay: 0.8
 --- !u!1 &1937616531
 GameObject:
   m_ObjectHideFlags: 0
@@ -104469,6 +104879,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1964054931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1964054932}
+  m_Layer: 11
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1964054932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964054931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.37, y: -1.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 971407014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1967223587
 GameObject:
   m_ObjectHideFlags: 0
