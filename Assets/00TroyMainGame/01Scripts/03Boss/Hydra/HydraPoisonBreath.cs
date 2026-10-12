@@ -24,7 +24,7 @@ public class HydraPoisonBreath : MonoBehaviour
 
     [Header("Effect")]
     [SerializeField] private GameObject warningEffect;
-    [SerializeField] private GameObject breathEffect;
+    [SerializeField] private ParticleSystem breathEffect;
 
     private float stateTimer;
     private float damageTimer;
@@ -47,7 +47,7 @@ public class HydraPoisonBreath : MonoBehaviour
             warningEffect.SetActive(true);
 
         if (breathEffect != null)
-            breathEffect.SetActive(false);
+            breathEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     public void Tick()
@@ -83,7 +83,7 @@ public class HydraPoisonBreath : MonoBehaviour
             IsBreathFinished = true;
 
             if (breathEffect != null)
-                breathEffect.SetActive(false);
+                breathEffect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
 
@@ -99,12 +99,13 @@ public class HydraPoisonBreath : MonoBehaviour
             warningEffect.SetActive(false);
 
         if (breathEffect != null)
-            breathEffect.SetActive(true);
+            breathEffect.Play();
     }
 
     private void CheckDamage()
     {
-        if (player == null || playerModel == null || playerPoison == null)
+        if (firePoint == null || player == null ||
+            playerModel == null || playerPoison == null)
             return;
 
         if (playerModel.CurrentHP <= 0f)
@@ -152,6 +153,6 @@ public class HydraPoisonBreath : MonoBehaviour
             warningEffect.SetActive(false);
 
         if (breathEffect != null)
-            breathEffect.SetActive(false);
+            breathEffect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
 }
