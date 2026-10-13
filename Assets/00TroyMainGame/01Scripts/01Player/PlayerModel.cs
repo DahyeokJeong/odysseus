@@ -63,7 +63,17 @@ public class PlayerModel : MonoBehaviour
 
     public void ReduceHP(float damage)
     {
+        if(damage <= 0f || currentHP <= 0f)
+            return;
+
+        float previousHP = currentHP;
+
         currentHP = Mathf.Max(0f, currentHP - damage);
+
+        /*Debug.Log(
+            $"[Player HP] °¨¼Ò·®: {previousHP - currentHP:F1} | " +
+            $"HP: {previousHP:F1} / {MaxHP:F1} ¡æ {currentHP:F1} / {MaxHP:F1}"
+        );*/
     }
 
     public void SetEquipmentStat(float maxHP,

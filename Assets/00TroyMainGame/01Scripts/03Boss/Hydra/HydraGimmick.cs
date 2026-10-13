@@ -87,10 +87,6 @@ public class HydraGimmick : MonoBehaviour
 
             currentIndex++;
 
-            Debug.Log(
-                $"Hydra Gimmick : {currentIndex} / {sequence.Length}"
-            );
-
             if (currentIndex >= sequence.Length)
             {
                 SuccessGimmick();
@@ -161,16 +157,12 @@ public class HydraGimmick : MonoBehaviour
         SetSequenceUI();
 
         isAnimating = false;
-
-        Debug.Log("Wrong Key - New Sequence");
     }
 
     private void SuccessGimmick()
     {
         isRunning = false;
         isAnimating = false;
-
-        Debug.Log("Hydra Gimmick Success");
 
         gimmickUI.Hide();
 
@@ -183,8 +175,6 @@ public class HydraGimmick : MonoBehaviour
         isAnimating = false;
 
         gimmickUI.SetTimer(0f);
-
-        Debug.Log("Hydra Gimmick Failed");
 
         gimmickUI.Hide();
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.Interactions;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,13 +12,16 @@ public class PlayerMovement : MonoBehaviour
     [Header("Collision")]
     [SerializeField] private LayerMask collisionLayer;
 
+    private float slowMultiplier = 1f;
+    private int slowCount;
+
     public void Move(Vector2 moveInput)
     {
         Vector2 currentPos = rb.position;
 
         Vector2 moveDirection = moveInput.normalized;
 
-        float moveDistance = playerModel.MoveSpeed * Time.fixedDeltaTime;
+        float moveDistance = playerModel.MoveSpeed * slowMultiplier * Time.fixedDeltaTime;
 
         Vector2 nextPos = currentPos + moveDirection * moveDistance;
 
@@ -25,6 +29,24 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         rb.MovePosition(nextPos);
+    }
+
+    public void ApplySlow(float multiplier)
+    {
+        slowCount++;
+        slowMultiplier = Mathf.Min(slowMultiplier, multiplier);
+
+        Debug.Log($"[Slow 적용] Count: {slowCount}, 배율: {slowMultiplier}");
+    }
+
+    public void RemoveSlow()
+    {
+        slowCount = Mathf.Max(0, slowCount - 1);
+
+        if (slowCount == 0)
+            slowMultiplier = 1f;
+
+        Debug.Log($"[Slow 해제] Count: {slowCount}, 배율: {slowMultiplier}");
     }
 
     public void Teleport(Vector2 position)

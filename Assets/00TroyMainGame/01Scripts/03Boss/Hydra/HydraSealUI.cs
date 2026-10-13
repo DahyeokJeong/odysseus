@@ -21,7 +21,7 @@ public class HydraSealUI : MonoBehaviour
     [SerializeField] private float shakeSpeed = 50f;
 
     [Header("Test")]
-   // [SerializeField] private bool testMode = true;
+    //[SerializeField] private bool testMode = true;
 
     private float currentAngle;
     private float previousTimeScale;
