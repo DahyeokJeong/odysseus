@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class HydraPoisonBreath : MonoBehaviour
@@ -6,6 +7,7 @@ public class HydraPoisonBreath : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform player;
     [SerializeField] private PlayerModel playerModel;
+    [SerializeField] private PlayerHit playerHit;
     [SerializeField] private PlayerPoison playerPoison;
 
     [Header("Attack")]
@@ -31,6 +33,7 @@ public class HydraPoisonBreath : MonoBehaviour
 
     private bool isWarning;
     private bool isBreathing;
+    private bool hasHitPlayer;
 
     public bool IsBreathFinished { get; private set; }
 
@@ -41,13 +44,18 @@ public class HydraPoisonBreath : MonoBehaviour
 
         isWarning = true;
         isBreathing = false;
+        hasHitPlayer = false;
+
         IsBreathFinished = false;
 
         if (warningEffect != null)
             warningEffect.SetActive(true);
 
         if (breathEffect != null)
-            breathEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            breathEffect.Stop(
+                true,
+                ParticleSystemStopBehavior.StopEmittingAndClear
+            );
     }
 
     public void Tick()
@@ -83,7 +91,10 @@ public class HydraPoisonBreath : MonoBehaviour
             IsBreathFinished = true;
 
             if (breathEffect != null)
-                breathEffect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                breathEffect.Stop(
+                    true,
+                    ParticleSystemStopBehavior.StopEmitting
+                );
         }
     }
 
@@ -94,6 +105,7 @@ public class HydraPoisonBreath : MonoBehaviour
 
         stateTimer = 0f;
         damageTimer = 0f;
+        hasHitPlayer = false;
 
         if (warningEffect != null)
             warningEffect.SetActive(false);
@@ -140,7 +152,27 @@ public class HydraPoisonBreath : MonoBehaviour
         if (wallHit.collider != null)
             return;
 
-        playerModel.ReduceHP(damage);
+        if (!hasHitPlayer)
+        {
+            if (playerHit != null)
+            {
+                playerHit.TakeDamage(
+                    damage,
+                    toPlayer.normalized
+                );
+            }
+            else
+            {
+                playerModel.ReduceHP(damage);
+            }
+
+            hasHitPlayer = true;
+        }
+        else
+        {
+            playerModel.ReduceHP(damage);
+        }
+
         playerPoison.ApplyPoison();
     }
 
@@ -148,11 +180,15 @@ public class HydraPoisonBreath : MonoBehaviour
     {
         isWarning = false;
         isBreathing = false;
+        hasHitPlayer = false;
 
         if (warningEffect != null)
             warningEffect.SetActive(false);
 
         if (breathEffect != null)
-            breathEffect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            breathEffect.Stop(
+                true,
+                ParticleSystemStopBehavior.StopEmitting
+            );
     }
 }

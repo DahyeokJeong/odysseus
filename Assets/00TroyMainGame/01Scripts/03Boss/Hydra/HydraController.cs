@@ -2,6 +2,21 @@ using UnityEngine;
 
 public class HydraController : MonoBehaviour
 {
+    public enum HydraPhase
+    {
+        SubPhase,
+        MainPhase1,
+        MainPhase2,
+        MainPhase3
+    }
+
+    [Header("Phase")]
+    [SerializeField] private HydraPhase currentPhase = HydraPhase.SubPhase;
+
+    public HydraPhase CurrentPhase => currentPhase;
+
+
+
     [Header("Main Head")]
     [SerializeField] private HydraHead mainHead;
     [SerializeField] private MainHeadController mainHeadController;
@@ -77,6 +92,7 @@ public class HydraController : MonoBehaviour
         attackTimer = 0f;
 
         mainHeadController.StartBreath();
+
     }
 
     public void EndMainHeadBreath()
