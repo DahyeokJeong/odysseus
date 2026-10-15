@@ -11,8 +11,10 @@ public class HydraFinalGimmick : MonoBehaviour
 
     private float remainingTime;
     private bool isActive;
+    private bool hasFire;
 
     public bool IsActive => isActive;
+    public bool HasFire => hasFire;
     public float RemainingTime => remainingTime;
 
     public event Action OnGimmickSuccess;
@@ -42,11 +44,30 @@ public class HydraFinalGimmick : MonoBehaviour
     {
         remainingTime = timeLimit;
         isActive = true;
+        hasFire = false;
 
         if (timerUI != null)
             timerUI.Show();
 
         Debug.Log("[Hydra] √÷¡æ ±‚πÕ ¡¶«—Ω√∞£ Ω√¿€!");
+    }
+
+    public void TakeFire()
+    {
+        if (!isActive || hasFire)
+            return;
+
+        hasFire = true;
+
+        Debug.Log("[Hydra] »≠≈Í∫“ø°º≠ ∫“ »πµÊ!");
+    }
+
+    public void UseFire()
+    {
+        if (!isActive || !hasFire)
+            return;
+
+        SuccessGimmick();
     }
 
     public void SuccessGimmick()
@@ -55,6 +76,7 @@ public class HydraFinalGimmick : MonoBehaviour
             return;
 
         isActive = false;
+        hasFire = false;
 
         if (timerUI != null)
             timerUI.Hide();
@@ -65,11 +87,13 @@ public class HydraFinalGimmick : MonoBehaviour
     private void FailGimmick()
     {
         isActive = false;
+        hasFire = false;
 
         if (timerUI != null)
             timerUI.Hide();
 
         Debug.Log("[Hydra] √÷¡æ ±‚πÕ Ω«∆–!");
+
         OnGimmickFailed?.Invoke();
     }
 }

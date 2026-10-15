@@ -37,10 +37,15 @@ public class PlayerInteraction : MonoBehaviour
 
         currentInteractable = hit.GetComponent<IInteractable>();
 
-        if (currentInteractable != null)
+        if (currentInteractable != null &&
+            !string.IsNullOrEmpty(currentInteractable.InteractionText))
+        {
             interactionUI.Show(currentInteractable.InteractionText);
+        }
         else
+        {
             interactionUI.Hide();
+        }
     }
 
     private void OnDrawGizmosSelected()
