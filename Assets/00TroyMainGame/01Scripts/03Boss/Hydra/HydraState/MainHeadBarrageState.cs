@@ -28,5 +28,6 @@ public class MainHeadBarrageState : IState
     public void Exit()
     {
         controller.Barrage.StopAttack();
+        controller.HydraController.EndMainHeadAttack();
     }
 }

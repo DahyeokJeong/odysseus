@@ -29,6 +29,6 @@ public class MainHeadBreathState : IState
     public void Exit()
     {
         controller.Breath.StopBreath();
-        controller.HydraController.EndMainHeadBreath();
+        controller.HydraController.EndMainHeadAttack();
     }
 }

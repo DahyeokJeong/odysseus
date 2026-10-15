@@ -1750,9 +1750,7 @@ MonoBehaviour:
     - m_rawData: 568105584918864066
     m_LastClickedID:
       m_rawData: 568105584918864066
-    m_ExpandedIDs:
-    - m_rawData: 0
-    - m_rawData: 568105584918851918
+    m_ExpandedIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1785,9 +1783,7 @@ MonoBehaviour:
     - m_rawData: 568105584918852984
     m_LastClickedID:
       m_rawData: 568105584918852984
-    m_ExpandedIDs:
-    - m_rawData: 0
-    - m_rawData: 568105584918851918
+    m_ExpandedIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -3,9 +3,9 @@ using UnityEngine;
 public class HydraPoisonPool : MonoBehaviour
 {
     [Header("Setting")]
-    [SerializeField] private float lifeTime = 5f;
+    [SerializeField] private float lifeTime = 10f;
     [SerializeField, Range(0f, 1f)]
-    private float slowMultiplier = 0.6f;
+    private float slowMultiplier = 0.1f;
     [SerializeField] private float poisonInterval = 0.5f;
 
     private float lifeTimer;
@@ -16,11 +16,6 @@ public class HydraPoisonPool : MonoBehaviour
 
     private PlayerPoison playerPoison;
     private PlayerMovement playerMovement;
-
-    private void Start()
-    {
-        Initialize();
-    }
 
     public void Initialize()
     {
@@ -77,8 +72,6 @@ public class HydraPoisonPool : MonoBehaviour
 
         playerMovement.ApplySlow(slowMultiplier);
         playerPoison.ApplyPoison();
-
-        Debug.Log("독 장판 진입 - 둔화 및 중독");
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -86,15 +79,12 @@ public class HydraPoisonPool : MonoBehaviour
         if (!isActive || !isPlayerInside)
             return;
 
-        PlayerMovement movement =
-            other.GetComponentInParent<PlayerMovement>();
+        PlayerMovement movement = other.GetComponentInParent<PlayerMovement>();
 
         if (movement != playerMovement)
             return;
 
         RemovePlayerEffects();
-
-        Debug.Log("독 장판 이탈 - 둔화 해제");
     }
 
     private void RemovePlayerEffects()
@@ -111,10 +101,9 @@ public class HydraPoisonPool : MonoBehaviour
 
     private void Deactivate()
     {
-        isActive = false;
-        isPlayerInside = false;
-        playerPoison = null;
+        RemovePlayerEffects();
 
+        isActive = false;
         gameObject.SetActive(false);
     }
 

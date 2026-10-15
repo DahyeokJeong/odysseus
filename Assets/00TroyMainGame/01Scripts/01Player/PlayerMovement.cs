@@ -35,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
     {
         slowCount++;
         slowMultiplier = Mathf.Min(slowMultiplier, multiplier);
-
-        Debug.Log($"[Slow 적용] Count: {slowCount}, 배율: {slowMultiplier}");
     }
 
     public void RemoveSlow()
@@ -45,8 +43,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (slowCount == 0)
             slowMultiplier = 1f;
-
-        Debug.Log($"[Slow 해제] Count: {slowCount}, 배율: {slowMultiplier}");
     }
 
     public void Teleport(Vector2 position)

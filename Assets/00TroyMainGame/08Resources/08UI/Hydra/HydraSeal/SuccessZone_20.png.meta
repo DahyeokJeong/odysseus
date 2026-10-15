@@ -1,0 +1,1118 @@
+fileFormatVersion: 2
+guid: a4e94be1d478ce74b914a996abb06557
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8523200880813562636
+    second: SuccessZone_20_0
+  - first:
+      213: 367438036800472964
+    second: SuccessZone_20_1
+  - first:
+      213: 1720105154544227524
+    second: SuccessZone_20_2
+  - first:
+      213: -7307413863505841470
+    second: SuccessZone_20_3
+  - first:
+      213: 5721668836972176288
+    second: SuccessZone_20_4
+  - first:
+      213: 7170033265766768209
+    second: SuccessZone_20_5
+  - first:
+      213: -8014186517947026726
+    second: SuccessZone_20_6
+  - first:
+      213: 6248479287215771375
+    second: SuccessZone_20_7
+  - first:
+      213: -5990306570024491544
+    second: SuccessZone_20_8
+  - first:
+      213: -6376981857307275179
+    second: SuccessZone_20_9
+  - first:
+      213: 1830424175984563141
+    second: SuccessZone_20_10
+  - first:
+      213: 6376124512163608165
+    second: SuccessZone_20_11
+  - first:
+      213: 7530986111221141207
+    second: SuccessZone_20_12
+  - first:
+      213: 4813978032423317791
+    second: SuccessZone_20_13
+  - first:
+      213: 6831035404796458013
+    second: SuccessZone_20_14
+  - first:
+      213: -7882393175557399020
+    second: SuccessZone_20_15
+  - first:
+      213: 5576943511181502984
+    second: SuccessZone_20_16
+  - first:
+      213: -245248969974575792
+    second: SuccessZone_20_17
+  - first:
+      213: -3825591933810349513
+    second: SuccessZone_20_18
+  - first:
+      213: 5769628770150913707
+    second: SuccessZone_20_19
+  - first:
+      213: -8224759304760933029
+    second: SuccessZone_20_20
+  - first:
+      213: 2678311668449209174
+    second: SuccessZone_20_21
+  - first:
+      213: -8900214032487976513
+    second: SuccessZone_20_22
+  - first:
+      213: 8046741572731268184
+    second: SuccessZone_20_23
+  - first:
+      213: 2667716456940884539
+    second: SuccessZone_20_24
+  - first:
+      213: 1406966143819374300
+    second: SuccessZone_20_25
+  - first:
+      213: 6485298860917744857
+    second: SuccessZone_20_26
+  - first:
+      213: -8006467041077311388
+    second: SuccessZone_20_27
+  - first:
+      213: -1180374887082214931
+    second: SuccessZone_20_28
+  - first:
+      213: -7109891063479081686
+    second: SuccessZone_20_29
+  - first:
+      213: -8390783506423330083
+    second: SuccessZone_20_30
+  - first:
+      213: 7092630060688475065
+    second: SuccessZone_20_31
+  - first:
+      213: 8715481065072458253
+    second: SuccessZone_20_32
+  - first:
+      213: -1425064619230830539
+    second: SuccessZone_20_33
+  - first:
+      213: -2031406866972987276
+    second: SuccessZone_20_34
+  - first:
+      213: 3761155853409764465
+    second: SuccessZone_20_35
+  - first:
+      213: 1822181858304455220
+    second: SuccessZone_20_36
+  - first:
+      213: -3484645493250814973
+    second: SuccessZone_20_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SuccessZone_20_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1091
+        height: 1261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b50321b0e784670800000000000000
+      internalID: 8523200880813562636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_1
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1156
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 487857c92f6691500800000000000000
+      internalID: 367438036800472964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_2
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 1210
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c45de8468a0fd710800000000000000
+      internalID: 1720105154544227524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_3
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1225
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c238f6bec9d69a90800000000000000
+      internalID: -7307413863505841470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_4
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 1151
+        width: 38
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a326261e73776f40800000000000000
+      internalID: 5721668836972176288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_5
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 1104
+        width: 171
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e13c94443118360800000000000000
+      internalID: 7170033265766768209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_6
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1145
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad2fa0aa2d3e7c090800000000000000
+      internalID: -8014186517947026726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_7
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 467
+        width: 165
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feec1ec4ece07b650800000000000000
+      internalID: 6248479287215771375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_8
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1069
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5600e99e72edca0800000000000000
+      internalID: -5990306570024491544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1039
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550d61899c86087a0800000000000000
+      internalID: -6376981857307275179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1037
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c3d8dd0719f66910800000000000000
+      internalID: 1830424175984563141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1039
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5663c2f267b8c7850800000000000000
+      internalID: 6376124512163608165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_12
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1007
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de8cbf97ff638860800000000000000
+      internalID: 7530986111221141207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_13
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 936
+        width: 89
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f113023d38faec240800000000000000
+      internalID: 4813978032423317791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_14
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 910
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d14720f1286bcce50800000000000000
+      internalID: 6831035404796458013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_15
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 854
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e10f66b2d1c9290800000000000000
+      internalID: -7882393175557399020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_16
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 855
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80aa4645398456d40800000000000000
+      internalID: 5576943511181502984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_17
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 791
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d82277c53b89cf0800000000000000
+      internalID: -245248969974575792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_18
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 781
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a62a1b764c8eac0800000000000000
+      internalID: -3825591933810349513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_19
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 787
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba618b23cc6d11050800000000000000
+      internalID: 5769628770150913707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_20
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 795
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b55c2ac2df8cbdd80800000000000000
+      internalID: -8224759304760933029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_21
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 759
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65be2bba5464b2520800000000000000
+      internalID: 2678311668449209174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_22
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 763
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb17b982e761c7480800000000000000
+      internalID: -8900214032487976513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_23
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 765
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ce302b3d4cbaf60800000000000000
+      internalID: 8046741572731268184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_24
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 747
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32dc61cbf1a50520800000000000000
+      internalID: 2667716456940884539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_25
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 741
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdeda5dd04c868310800000000000000
+      internalID: 1406966143819374300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_26
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 731
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d46f3314f8600a50800000000000000
+      internalID: 6485298860917744857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_27
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 692
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 468c6be65a053e090800000000000000
+      internalID: -8006467041077311388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_28
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 684
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de93ca94b477e9fe0800000000000000
+      internalID: -1180374887082214931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_29
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 692
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25ea916fb7945d90800000000000000
+      internalID: -7109891063479081686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_30
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 677
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dda4e607bd2fd8b80800000000000000
+      internalID: -8390783506423330083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_31
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 662
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3089a36751e6260800000000000000
+      internalID: 7092630060688475065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_32
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 658
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a79422adb93f870800000000000000
+      internalID: 8715481065072458253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_33
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 592
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530e4c47747293ce0800000000000000
+      internalID: -1425064619230830539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_34
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 549
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47039c3a73efec3e0800000000000000
+      internalID: -2031406866972987276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_35
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 233
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 174ce5b325f423430800000000000000
+      internalID: 3761155853409764465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_36
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 112
+        width: 77
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432f56ceeb0b94910800000000000000
+      internalID: 1822181858304455220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuccessZone_20_37
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 209
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c8e96e26d04afc0800000000000000
+      internalID: -3484645493250814973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SuccessZone_20_0: 8523200880813562636
+      SuccessZone_20_1: 367438036800472964
+      SuccessZone_20_10: 1830424175984563141
+      SuccessZone_20_11: 6376124512163608165
+      SuccessZone_20_12: 7530986111221141207
+      SuccessZone_20_13: 4813978032423317791
+      SuccessZone_20_14: 6831035404796458013
+      SuccessZone_20_15: -7882393175557399020
+      SuccessZone_20_16: 5576943511181502984
+      SuccessZone_20_17: -245248969974575792
+      SuccessZone_20_18: -3825591933810349513
+      SuccessZone_20_19: 5769628770150913707
+      SuccessZone_20_2: 1720105154544227524
+      SuccessZone_20_20: -8224759304760933029
+      SuccessZone_20_21: 2678311668449209174
+      SuccessZone_20_22: -8900214032487976513
+      SuccessZone_20_23: 8046741572731268184
+      SuccessZone_20_24: 2667716456940884539
+      SuccessZone_20_25: 1406966143819374300
+      SuccessZone_20_26: 6485298860917744857
+      SuccessZone_20_27: -8006467041077311388
+      SuccessZone_20_28: -1180374887082214931
+      SuccessZone_20_29: -7109891063479081686
+      SuccessZone_20_3: -7307413863505841470
+      SuccessZone_20_30: -8390783506423330083
+      SuccessZone_20_31: 7092630060688475065
+      SuccessZone_20_32: 8715481065072458253
+      SuccessZone_20_33: -1425064619230830539
+      SuccessZone_20_34: -2031406866972987276
+      SuccessZone_20_35: 3761155853409764465
+      SuccessZone_20_36: 1822181858304455220
+      SuccessZone_20_37: -3484645493250814973
+      SuccessZone_20_4: 5721668836972176288
+      SuccessZone_20_5: 7170033265766768209
+      SuccessZone_20_6: -8014186517947026726
+      SuccessZone_20_7: 6248479287215771375
+      SuccessZone_20_8: -5990306570024491544
+      SuccessZone_20_9: -6376981857307275179
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

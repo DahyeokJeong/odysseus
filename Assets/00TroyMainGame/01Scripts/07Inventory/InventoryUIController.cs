@@ -5,6 +5,7 @@ public class InventoryUIController : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject uiPanel;
     [SerializeField] private GameObject minimapUI;
+    [SerializeField] private ItemTooltipUI tooltipUI;
 
     private void OnEnable()
     {
@@ -22,5 +23,8 @@ public class InventoryUIController : MonoBehaviour
 
         uiPanel.SetActive(isOpen);
         minimapUI.SetActive(!isOpen);
+
+        if(!isOpen && tooltipUI != null)
+            tooltipUI.Hide();
     }
 }

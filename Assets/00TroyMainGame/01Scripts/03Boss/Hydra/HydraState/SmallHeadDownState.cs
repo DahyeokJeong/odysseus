@@ -11,8 +11,6 @@ public class SmallHeadDownState : IState
 
     public void Enter()
     {
-        Debug.Log($"{controller.gameObject.name} Down State");
-
         controller.Gimmick.OnSuccess += HandleSuccess;
         controller.Gimmick.OnFail += HandleFail;
 

@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class HydraHeadController : MonoBehaviour
@@ -18,16 +19,12 @@ public class HydraHeadController : MonoBehaviour
     [Header("Head")]
     [SerializeField] private GameObject hitBox;
 
-    [Header("Sprite")]
-    [SerializeField] private Sprite severedSprite;
-
     private IState currentState;
 
     private SmallHeadIdleState idleState;
     private SmallHeadAttackState attackState;
     private SmallHeadDownState downState;
     private SmallHeadSeveredState severedState;
-
 
     public HydraHead Head => head;
     public HydraGimmick Gimmick => gimmick;
@@ -36,7 +33,6 @@ public class HydraHeadController : MonoBehaviour
     public HydraController HydraController => hydraController;
     public Transform GimmickPos => gimmickPos;
     public HydraPoisonProjectileAttack PoisonAttack => poisonAttack;
-
 
     public SmallHeadIdleState IdleState => idleState;
     public SmallHeadAttackState AttackState => attackState;
@@ -83,12 +79,33 @@ public class HydraHeadController : MonoBehaviour
 
     public void SeverHead()
     {
-        view.SetSeveredSprite(severedSprite);
+        view.HideHead();
 
         if (hitBox != null)
             hitBox.SetActive(false);
 
+        if (TryGetComponent(out Collider2D bodyCollider))
+            bodyCollider.enabled = false;
+
         hydraController.OnSmallHeadSevered();
+    }
+
+    public void RegenerateHead()
+    {
+        if (!head.IsDown)
+            return;
+
+        head.Regenerate();
+
+        if (hitBox != null)
+            hitBox.SetActive(true);
+
+        if (TryGetComponent(out Collider2D bodyCollider))
+            bodyCollider.enabled = true;
+
+        ChangeState(idleState);
+
+        view.ShowHead();
     }
 
     public void StartAttack()
