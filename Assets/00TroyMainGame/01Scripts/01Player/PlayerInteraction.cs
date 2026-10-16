@@ -6,7 +6,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private PlayerInputHandler inputHandler;
 
     [Header("Interaction")]
-    [SerializeField] private float radius = 1f;
+    [SerializeField] private float radius = 2f;
     [SerializeField] private LayerMask interactionLayer;
 
     [Header("UI")]

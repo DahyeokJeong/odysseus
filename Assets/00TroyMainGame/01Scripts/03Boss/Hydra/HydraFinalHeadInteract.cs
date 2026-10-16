@@ -13,7 +13,7 @@ public class HydraFinalHeadInteract : MonoBehaviour, IInteractable
                 return "";
 
             if (!finalGimmick.HasFire)
-                return "Get Fire";
+                return "";
 
             return "Fire";
         }
