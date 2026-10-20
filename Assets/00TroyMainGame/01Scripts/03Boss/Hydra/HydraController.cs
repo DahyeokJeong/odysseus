@@ -18,11 +18,17 @@ public class HydraController : MonoBehaviour
     [Header("Main Head")]
     [SerializeField] private HydraHead mainHead;
     [SerializeField] private MainHeadController mainHeadController;
-    [SerializeField] private float mainAttackInterval = 15f;
+
 
     [Header("Small Head")]
     [SerializeField] private HydraHeadController[] smallHeads;
-    [SerializeField] private float attackInterval = 2f;
+
+    private int lastAttackHeadIndex = -1;
+
+    [Header("Attack Interval")]
+    [SerializeField] private float subMainAttackInterval = 12f;
+    [SerializeField] private float subHeadAttackInterval = 3f;
+    [SerializeField] private float mainPhaseAttackInterval = 5f;
 
     [Header("Seal")]
     [SerializeField] private HydraSealUI sealUI;
@@ -117,12 +123,12 @@ public class HydraController : MonoBehaviour
         if (isSmallHeadAttacking)
             return;
 
-        if (currentPhase != HydraPhase.SubPhase && severedHeadCount >= smallHeads.Length)
+        if (currentPhase != HydraPhase.SubPhase)
             return;
 
         attackTimer += Time.deltaTime;
 
-        if (attackTimer >= attackInterval)
+        if (attackTimer >= subHeadAttackInterval)
             StartNextSmallHeadAttack();
     }
 
@@ -158,9 +164,13 @@ public class HydraController : MonoBehaviour
         if (isMainHeadAttacking || isMainAttackPending)
             return;
 
+        float interval = currentPhase == HydraPhase.SubPhase
+            ? subMainAttackInterval
+            : mainPhaseAttackInterval;
+
         mainAttackTimer += Time.deltaTime;
 
-        if (mainAttackTimer >= mainAttackInterval)
+        if (mainAttackTimer >= interval)
             isMainAttackPending = true;
     }
 
@@ -218,25 +228,58 @@ public class HydraController : MonoBehaviour
 
     private void StartNextSmallHeadAttack()
     {
-        if (smallHeads.Length == 0)
+        int availableCount = 0;
+
+        // 공격 가능한 머리 수 확인
+        for (int i = 0; i < smallHeads.Length; i++)
+        {
+            if (smallHeads[i] == null || smallHeads[i].Head.IsDown)
+                continue;
+
+            availableCount++;
+        }
+
+        if (availableCount == 0)
+        {
+            attackTimer = 0f;
             return;
+        }
+
+        int candidateCount = 0;
+
+        // 직전 공격 머리를 제외하고 후보 계산
+        for (int i = 0; i < smallHeads.Length; i++)
+        {
+            if (smallHeads[i] == null || smallHeads[i].Head.IsDown)
+                continue;
+
+            if (availableCount > 1 && i == lastAttackHeadIndex)
+                continue;
+
+            candidateCount++;
+        }
+
+        int randomIndex = Random.Range(0, candidateCount);
 
         for (int i = 0; i < smallHeads.Length; i++)
         {
-            HydraHeadController head = smallHeads[currentHeadIndex];
-
-            currentHeadIndex =
-                (currentHeadIndex + 1) % smallHeads.Length;
+            HydraHeadController head = smallHeads[i];
 
             if (head == null || head.Head.IsDown)
                 continue;
 
+            if (availableCount > 1 && i == lastAttackHeadIndex)
+                continue;
+
+            if (randomIndex-- > 0)
+                continue;
+
+            lastAttackHeadIndex = i;
             isSmallHeadAttacking = true;
+
             head.StartAttack();
             return;
         }
-
-        attackTimer = 0f;
     }
 
     public void EndSmallHeadAttack()
@@ -259,6 +302,10 @@ public class HydraController : MonoBehaviour
     private void StartMainPhase()
     {
         mainHead.SetInvincible(false);
+
+        mainAttackTimer = 0f;
+        attackTimer = 0f;
+        isMainAttackPending = false;
 
         ChangePhase(HydraPhase.MainPhase1);
     }

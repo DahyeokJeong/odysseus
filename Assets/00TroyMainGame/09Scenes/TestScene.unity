@@ -3474,13 +3474,14 @@ MonoBehaviour:
   phase3HP: 0.4
   mainHead: {fileID: 118762100}
   mainHeadController: {fileID: 118762104}
-  mainAttackInterval: 5
   smallHeads:
   - {fileID: 971407019}
   - {fileID: 528976013}
   - {fileID: 859650091}
   - {fileID: 1933589483}
-  attackInterval: 5
+  subMainAttackInterval: 12
+  subHeadAttackInterval: 3
+  mainPhaseAttackInterval: 5
   sealUI: {fileID: 2140960846}
   sealFailHealRatio: 0.2
   finalGimmick: {fileID: 144502576}
