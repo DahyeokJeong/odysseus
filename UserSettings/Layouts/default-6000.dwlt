@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 167
+  controlID: 24
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 142
+  controlID: 68
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -1406,9 +1406,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 310.79126, y: 341.7393, z: 1.8860108}
+    m_Target: {x: 2.9313588, y: 48.76531, z: 4.0362997}
     speed: 2
-    m_Value: {x: 310.79126, y: 341.7393, z: 1.8860108}
+    m_Value: {x: 2.9313588, y: 48.76531, z: 4.0362997}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1459,9 +1459,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 230.70863
+    m_Target: 15.679656
     speed: 2
-    m_Value: 230.70863
+    m_Value: 15.679656
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1637,25 +1637,11 @@ MonoBehaviour:
       m_LastClickedID:
         m_rawData: 0
       m_ExpandedIDs:
-      - m_rawData: 568105589213590932
-      - m_rawData: 568105589213679828
-      - m_rawData: 568105589213680814
-      - m_rawData: 568105584918873498
-      - m_rawData: 568105584918873594
-      - m_rawData: 568105584918873650
-      - m_rawData: 568105584918873826
-      - m_rawData: 568105584918873922
-      - m_rawData: 568105584918873992
-      - m_rawData: 568105584918874122
-      - m_rawData: 568105584918874128
-      - m_rawData: 568105584918874320
-      - m_rawData: 568105584918874454
-      - m_rawData: 568105584918874610
-      - m_rawData: 568105584918874820
-      - m_rawData: 568105584918875396
-      - m_rawData: 568105584918875724
-      - m_rawData: 568105584918875770
-      - m_rawData: 568105584918876042
+      - m_rawData: 568105589213679738
+      - m_rawData: 568105589213680724
+      - m_rawData: 568105584918873752
+      - m_rawData: 568105584918874038
+      - m_rawData: 568105584918876088
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1733,7 +1719,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/00TroyMainGame/01Scripts/07Inventory
+    - Assets/00TroyMainGame/01Scripts/03Boss/Hydra
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1743,7 +1729,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/00TroyMainGame/01Scripts/07Inventory
+  - Assets/00TroyMainGame/01Scripts/03Boss/Hydra
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\User\Documents\GitHub\odysseus
   m_LockTracker:
@@ -1752,10 +1738,12 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_rawData: 568105584918869046
+    - m_rawData: 568105584918864190
     m_LastClickedID:
-      m_rawData: 568105584918869046
-    m_ExpandedIDs: []
+      m_rawData: 568105584918864190
+    m_ExpandedIDs:
+    - m_rawData: 0
+    - m_rawData: 568105584918852268
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1788,7 +1776,9 @@ MonoBehaviour:
     - m_rawData: 568105584918852984
     m_LastClickedID:
       m_rawData: 568105584918852984
-    m_ExpandedIDs: []
+    m_ExpandedIDs:
+    - m_rawData: 0
+    - m_rawData: 568105584918852268
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1817,9 +1807,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_rawData: 568105589213679828
+    - m_rawData: 568105584918842128
     m_LastClickedEntityId:
-      m_rawData: 568105589213679828
+      m_rawData: 568105584918842128
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_rawData: 568105584918852244

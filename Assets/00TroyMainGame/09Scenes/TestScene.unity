@@ -168,6 +168,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 548049240}
   sortingPoint: {fileID: 479619641}
+  isDynamic: 0
 --- !u!1 &9521710
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +454,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 9521714}
   sortingPoint: {fileID: 629371085}
+  isDynamic: 0
 --- !u!1 &17189409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,6 +2441,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 907340602}
   sortingPoint: {fileID: 1858825699}
+  isDynamic: 0
 --- !u!1 &112514072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,6 +2491,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1519721298}
   sortingPoint: {fileID: 246606795}
+  isDynamic: 0
 --- !u!1 &115505128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,6 +2833,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 118762099}
   sortingPoint: {fileID: 711178844}
+  isDynamic: 0
 --- !u!114 &118762103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3418,6 +3423,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 2042200289}
   sortingPoint: {fileID: 1583839609}
+  isDynamic: 0
 --- !u!1 &144502573
 GameObject:
   m_ObjectHideFlags: 0
@@ -8191,6 +8197,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 172481340}
   sortingPoint: {fileID: 2046092499}
+  isDynamic: 0
 --- !u!1 &249493581
 GameObject:
   m_ObjectHideFlags: 0
@@ -10403,6 +10410,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 2119100962}
   sortingPoint: {fileID: 130332978}
+  isDynamic: 0
 --- !u!1 &256213757
 GameObject:
   m_ObjectHideFlags: 0
@@ -10884,6 +10892,7 @@ MonoBehaviour:
   - {fileID: 1676879288}
   - {fileID: 1841313831}
   sortingPoint: {fileID: 207316638}
+  isDynamic: 0
 --- !u!1 &296552482
 GameObject:
   m_ObjectHideFlags: 0
@@ -16166,6 +16175,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1279948433}
   sortingPoint: {fileID: 1049399947}
+  isDynamic: 0
 --- !u!1 &422236102
 GameObject:
   m_ObjectHideFlags: 0
@@ -37288,6 +37298,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1422320355}
   sortingPoint: {fileID: 1360052242}
+  isDynamic: 0
 --- !u!1 &510355298
 GameObject:
   m_ObjectHideFlags: 0
@@ -37816,6 +37827,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 528976008}
   sortingPoint: {fileID: 854642813}
+  isDynamic: 0
 --- !u!114 &528976012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38276,6 +38288,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 2041509317}
   sortingPoint: {fileID: 1111880061}
+  isDynamic: 0
 --- !u!1 &597052102
 GameObject:
   m_ObjectHideFlags: 0
@@ -38427,6 +38440,7 @@ MonoBehaviour:
   - {fileID: 1967223589}
   - {fileID: 2036604314}
   sortingPoint: {fileID: 1901220179}
+  isDynamic: 0
 --- !u!1 &607196387
 GameObject:
   m_ObjectHideFlags: 0
@@ -39003,6 +39017,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 910589444}
   sortingPoint: {fileID: 354939504}
+  isDynamic: 0
 --- !u!1 &669232074
 GameObject:
   m_ObjectHideFlags: 0
@@ -42396,6 +42411,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 481472995}
   sortingPoint: {fileID: 768143652}
+  isDynamic: 0
 --- !u!1 &694124614
 GameObject:
   m_ObjectHideFlags: 0
@@ -43180,6 +43196,7 @@ MonoBehaviour:
   - {fileID: 214986346}
   - {fileID: 153977811}
   sortingPoint: {fileID: 1149451007}
+  isDynamic: 0
 --- !u!1 &748685362
 GameObject:
   m_ObjectHideFlags: 0
@@ -43229,6 +43246,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 852320555}
   sortingPoint: {fileID: 1267461479}
+  isDynamic: 0
 --- !u!1 &754046521
 GameObject:
   m_ObjectHideFlags: 0
@@ -43521,6 +43539,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 607704085}
   sortingPoint: {fileID: 996833213}
+  isDynamic: 0
 --- !u!1 &801287328
 GameObject:
   m_ObjectHideFlags: 0
@@ -43882,6 +43901,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 801287333}
   sortingPoint: {fileID: 1449564266}
+  isDynamic: 1
 --- !u!1 &801585040
 GameObject:
   m_ObjectHideFlags: 0
@@ -45044,6 +45064,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 859650087}
   sortingPoint: {fileID: 1841607043}
+  isDynamic: 0
 --- !u!114 &859650091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61683,6 +61704,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 971407015}
   sortingPoint: {fileID: 1035595130}
+  isDynamic: 0
 --- !u!114 &971407019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62547,6 +62569,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 873860884}
   sortingPoint: {fileID: 734149964}
+  isDynamic: 0
 --- !u!1 &1005525435
 GameObject:
   m_ObjectHideFlags: 0
@@ -63584,6 +63607,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 808773329}
   sortingPoint: {fileID: 1937616532}
+  isDynamic: 0
 --- !u!1 &1105344259
 GameObject:
   m_ObjectHideFlags: 0
@@ -64007,6 +64031,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 359757080}
   sortingPoint: {fileID: 1437985181}
+  isDynamic: 0
 --- !u!1 &1129756549
 GameObject:
   m_ObjectHideFlags: 0
@@ -64929,6 +64954,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 455493815}
   sortingPoint: {fileID: 1228107573}
+  isDynamic: 0
 --- !u!1 &1183445895
 GameObject:
   m_ObjectHideFlags: 0
@@ -65088,6 +65114,7 @@ MonoBehaviour:
   - {fileID: 1874712773}
   - {fileID: 1059416109}
   sortingPoint: {fileID: 1713408895}
+  isDynamic: 0
 --- !u!1 &1192393420
 GameObject:
   m_ObjectHideFlags: 0
@@ -65249,6 +65276,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1192393422}
   sortingPoint: {fileID: 910564410}
+  isDynamic: 0
 --- !u!1 &1194366984
 GameObject:
   m_ObjectHideFlags: 0
@@ -81118,7 +81146,7 @@ Transform:
   m_GameObject: {fileID: 1277916065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4, y: 36.4, z: -10}
+  m_LocalPosition: {x: 43.7, y: -3.3000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82195,6 +82223,7 @@ MonoBehaviour:
   - {fileID: 1808507215}
   - {fileID: 709129673}
   sortingPoint: {fileID: 623684242}
+  isDynamic: 0
 --- !u!1 &1355884362
 GameObject:
   m_ObjectHideFlags: 0
@@ -82615,6 +82644,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1373937259}
   sortingPoint: {fileID: 422236103}
+  isDynamic: 0
 --- !u!70 &1373937258
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -83340,6 +83370,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 986673833}
   sortingPoint: {fileID: 597052103}
+  isDynamic: 0
 --- !u!1 &1414586752
 GameObject:
   m_ObjectHideFlags: 0
@@ -85598,6 +85629,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1201747287}
   sortingPoint: {fileID: 1955139590}
+  isDynamic: 0
 --- !u!1 &1535860985
 GameObject:
   m_ObjectHideFlags: 0
@@ -86039,7 +86071,7 @@ Transform:
   m_GameObject: {fileID: 1553031138}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4, y: 36.4, z: -10}
+  m_LocalPosition: {x: 43.7, y: -3.3000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86250,6 +86282,7 @@ MonoBehaviour:
   - {fileID: 1127503965}
   - {fileID: 1952292677}
   sortingPoint: {fileID: 1627234141}
+  isDynamic: 0
 --- !u!1 &1570728639
 GameObject:
   m_ObjectHideFlags: 0
@@ -86478,7 +86511,7 @@ Transform:
   m_GameObject: {fileID: 1599407324}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 34.4, z: 0}
+  m_LocalPosition: {x: 41.2, y: -5.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -86771,6 +86804,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1599407325}
   sortingPoint: {fileID: 340888131}
+  isDynamic: 1
 --- !u!114 &1599407345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98222,6 +98256,7 @@ MonoBehaviour:
   - {fileID: 476314950}
   - {fileID: 1149150472}
   sortingPoint: {fileID: 388208397}
+  isDynamic: 0
 --- !u!1 &1722244464
 GameObject:
   m_ObjectHideFlags: 0
@@ -100577,6 +100612,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1421121849}
   sortingPoint: {fileID: 1690539467}
+  isDynamic: 0
 --- !u!1 &1796273979
 GameObject:
   m_ObjectHideFlags: 0
@@ -100626,6 +100662,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1640549833}
   sortingPoint: {fileID: 478659735}
+  isDynamic: 0
 --- !u!1 &1803069527
 GameObject:
   m_ObjectHideFlags: 0
@@ -101229,6 +101266,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 115505130}
   sortingPoint: {fileID: 501718442}
+  isDynamic: 0
 --- !u!1 &1857819605
 GameObject:
   m_ObjectHideFlags: 0
@@ -102113,6 +102151,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1933589478}
   sortingPoint: {fileID: 421645721}
+  isDynamic: 0
 --- !u!114 &1933589482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116494,6 +116533,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 432246036}
   sortingPoint: {fileID: 230240713}
+  isDynamic: 0
 --- !u!1 &1983665606
 GameObject:
   m_ObjectHideFlags: 0
@@ -116543,6 +116583,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 48818002}
   sortingPoint: {fileID: 444646952}
+  isDynamic: 0
 --- !u!1 &1984603855
 GameObject:
   m_ObjectHideFlags: 0
@@ -116705,6 +116746,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 915365675}
   sortingPoint: {fileID: 1139348375}
+  isDynamic: 0
 --- !u!1 &1992830893
 GameObject:
   m_ObjectHideFlags: 0
@@ -116877,6 +116919,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1992830896}
   sortingPoint: {fileID: 801585041}
+  isDynamic: 0
 --- !u!1 &1995882637
 GameObject:
   m_ObjectHideFlags: 0
@@ -121212,6 +121255,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1422646313}
   sortingPoint: {fileID: 510355299}
+  isDynamic: 0
 --- !u!1 &2021984028
 GameObject:
   m_ObjectHideFlags: 0
@@ -121614,6 +121658,7 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 1254167023}
   sortingPoint: {fileID: 977624401}
+  isDynamic: 0
 --- !u!1 &2036604312
 GameObject:
   m_ObjectHideFlags: 0

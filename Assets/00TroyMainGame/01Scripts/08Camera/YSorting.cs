@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class YSorting : MonoBehaviour
@@ -7,6 +8,7 @@ public class YSorting : MonoBehaviour
 
     [Header("Sorting")]
     [SerializeField] private Transform sortingPoint;
+    [SerializeField] private bool isDynamic = false;
 
     private const float SORTING_SCALE = 10f;
 
@@ -20,7 +22,20 @@ public class YSorting : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UpdateSortingOrder();
+    }
+
     private void LateUpdate()
+    {
+        if (!isDynamic)
+            return;
+
+        UpdateSortingOrder();
+    }
+
+    private void UpdateSortingOrder()
     {
         int sortingOrder =
             Mathf.RoundToInt(
