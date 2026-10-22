@@ -60,8 +60,7 @@ MonoBehaviour:
   - m_GUID: f45853d4727641d43911ca48f71cf77c
     m_Address: Assets/00TroyMainGame/06Datas/06Item/TestHelmet.asset
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - Item
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa51739680ba49b428036b8967c4cc4b
     m_Address: Assets/00TroyMainGame/06Datas/06Item/TestArmor.asset
